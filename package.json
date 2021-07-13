@@ -4,8 +4,8 @@
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@rails/webpacker": "5.4.0",
-    "alpinejs": "^3.1.1",
-    "autoprefixer": "^10.2.6",
+    "alpinejs": "^3.2.2",
+    "autoprefixer": "^10.3.1",
     "postcss": "^8.2.10",
     "postcss-loader": "^4.0.3",
     "tailwindcss": "^2.2.4",
@@ -17,6 +17,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "start": "bin/webpack & rails s"
+    "start": "bin/webpack & rails s",
+    "dev": "bin/webpack-dev-server & rails s"
   }
 }
