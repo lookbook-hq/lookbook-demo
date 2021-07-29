@@ -1,9 +1,11 @@
 
 class Elements::AvatarComponentPreview < ViewComponent::Preview
-  # Avatar *it's great*
+  # ### Avatar component
+  #
+  # A small image (usually of a cat)
   #
   # @param src [String]
-  def default(src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80")
+  def default(src: "https://placekitten.com/300/300")
     render Elements::AvatarComponent.new(src: src)
   end
 end
