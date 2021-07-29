@@ -1,10 +1,26 @@
 
 class Elements::AlertComponentPreview < ViewComponent::Preview
-  def warn
-    render Elements::AlertComponent.new(message: "Something went wrong :-(", style: :warn)
+
+  # Warning alert
+  # --------------
+  # This is a great thing to use to put people **off** using the app
+  #
+  # @param message [String]
+  # @param style [Symbol] 
+  
+  def warn(message: "This is a warning", style: :warn)
+    render Elements::AlertComponent.new(message: message, style: style)
   end 
 
-  def success
-    render Elements::AlertComponent.new(message: "That was successful!", style: :success)
+  # @param (see #warn)
+  def success(message: "That was successful!")
+    render Elements::AlertComponent.new(message: message, style: :success)
   end
+
+  private
+
+  def message_param
+
+  end
+
 end
