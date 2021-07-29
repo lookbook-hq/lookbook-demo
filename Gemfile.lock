@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/allmarkedup/lookbook
-  revision: 6400b16d355e9ed29aa76a285f4807c603ec2f08
+  revision: 3ce7c248ee3421b4ee6114759951ff01fc56a1d0
   branch: main
   specs:
-    lookbook (0.1.0)
+    lookbook (0.1.1)
       actioncable
       listen
       rails
