@@ -2,6 +2,10 @@
 
 [Lookbook](https://github.com/allmarkedup/lookbook) is a native development UI for [ViewComponent](https://viewcomponent.org/).
 
+This demo app demonstrates a basic Lookbook installation with some example components adapted from [TailwindUI](https://tailwindui.com/).
+
+![Lookbook UI](.github/assets/lookbook_screenshot.png)
+
 ## Running the demo app locally
 
 1. Clone or download [this repo](https://github.com/allmarkedup/lookbook-demo)
