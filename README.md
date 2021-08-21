@@ -1,10 +1,8 @@
 # Lookbook Demo App
 
-[Lookbook](https://github.com/allmarkedup/lookbook) is a UI for [ViewComponent](https://viewcomponent.org/) development.
+[Lookbook](https://github.com/allmarkedup/lookbook) is a native development UI for [ViewComponent](https://viewcomponent.org/).
 
-**Work in progress.**
-
-## Setup
+## Running the demo app locally
 
 1. Clone or download [this repo](https://github.com/allmarkedup/lookbook-demo)
 2. Install Ruby dependencies: `bundle install`

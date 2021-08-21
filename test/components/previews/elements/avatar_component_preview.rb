@@ -1,11 +1,18 @@
 
 class Elements::AvatarComponentPreview < ViewComponent::Preview
-  # ### Avatar component
-  #
-  # A small image (usually of a cat)
-  #
-  # @param src [String]
-  def default(src: "https://placekitten.com/300/300")
-    render Elements::AvatarComponent.new(src: src)
+  
+  # @label Small
+  def size_small
+    render Elements::AvatarComponent.new(src: "https://placekitten.com/300/300", size: :sm)
+  end
+
+  # @label Medium (default)
+  def size_medium
+    render Elements::AvatarComponent.new(src: "https://placekitten.com/300/300")
+  end
+
+  # @label Large
+  def size_large
+    render Elements::AvatarComponent.new(src: "https://placekitten.com/300/300", size: :lg)
   end
 end

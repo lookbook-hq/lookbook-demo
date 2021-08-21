@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lookbook Demo App</title>
+  <title>Component Preview</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
   <%= stylesheet_pack_tag 'application', media: 'all' %>
   <%= javascript_pack_tag 'application' %>
 </head>
 <body>
-  <%= yield %>
+  <div class="p-4">
+    <%= yield %>
+  </div>
 </body>
 </html>

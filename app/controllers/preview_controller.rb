@@ -1,0 +1,3 @@
+class PreviewController < ViewComponentsController
+  
+end

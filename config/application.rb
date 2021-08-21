@@ -19,11 +19,15 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Webpacker::Compiler.env["TAILWIND_MODE"] = "build"
+
 module LookbookDemo
   class Application < Rails::Application
 
     config.load_defaults 6.1
 
     config.view_component.preview_paths << "#{Rails.root}/app/components"
+    config.view_component.preview_controller = "PreviewController"
+    config.view_component.default_preview_layout = "preview"
   end
 end
