@@ -27,7 +27,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem "view_component", require: "view_component/engine"
-gem "lookbook", '~> 0.2.1'
+gem "lookbook"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

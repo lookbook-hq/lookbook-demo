@@ -1,4 +1,4 @@
-class Feedback::AlertComponentPreview < ViewComponent::Preview
+class Feedback::Banners::AlertComponentPreview < ViewComponent::Preview
 
   # Warning alert
   # --------------

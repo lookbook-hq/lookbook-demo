@@ -26,8 +26,9 @@ module LookbookDemo
 
     config.load_defaults 6.1
 
-    config.view_component.preview_paths << "#{Rails.root}/app/components"
     config.view_component.preview_controller = "PreviewController"
     config.view_component.default_preview_layout = "preview"
+
+    Rack::MiniProfiler.config.start_hidden = true
   end
 end

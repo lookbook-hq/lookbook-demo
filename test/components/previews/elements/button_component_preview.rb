@@ -1,8 +1,11 @@
 class Elements::ButtonComponentPreview < ViewComponent::Preview
+
+  # @!group 
+  
   # @label Primary (default)
   def with_default_theme
     render Elements::ButtonComponent.new do
-      "A primary action"
+      "A primary action #{rand(8)}"
     end
   end
 
@@ -12,11 +15,13 @@ class Elements::ButtonComponentPreview < ViewComponent::Preview
       "A less important action"
     end
   end
-
+  
   # @label Danger
   def with_danger_theme
     render Elements::ButtonComponent.new(theme: :danger) do
       "A dangerous action"
     end
   end
+
+  # @!endgroup 
 end
