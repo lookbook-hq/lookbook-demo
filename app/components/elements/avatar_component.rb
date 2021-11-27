@@ -1,10 +1,12 @@
 class Elements::AvatarComponent < ViewComponent::Base
-  def initialize(src:, size: :md)
+  def initialize(src:, size: :md, square: false)
     @src = src
     @classes = class_names({
+      "rounded-lg": square,
+      "rounded-full": !square,
       "h-8 w-8": size == :sm,
-      "h-12 w-12": size == :md,
-      "h-16 w-16": size == :lg
+      "h-20 w-20": size == :md,
+      "h-32 w-32": size == :lg
     })
   end
 end

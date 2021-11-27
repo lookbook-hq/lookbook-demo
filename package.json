@@ -18,7 +18,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "start": "bin/webpack & rails s",
-    "dev": "bin/webpack-dev-server & rails s"
+    "start": "bin/webpack & bin/rails s",
+    "dev": "bin/webpack-dev-server & bin/rails s"
   }
 }

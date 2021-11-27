@@ -23,11 +23,12 @@ Webpacker::Compiler.env["TAILWIND_MODE"] = "build"
 
 module LookbookDemo
   class Application < Rails::Application
-
     config.load_defaults 6.1
 
-    config.view_component.preview_controller = "PreviewController"
     config.view_component.default_preview_layout = "preview"
+    config.view_component.preview_controller = "PreviewController"
+
+    config.lookbook.experimental_features = true # Opt in to ALL experimental features. Not recommended!
 
     Rack::MiniProfiler.config.start_hidden = true
   end

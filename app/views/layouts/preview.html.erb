@@ -8,7 +8,9 @@
 </head>
 <body>
   <div class="p-4">
-    <%= yield %>
+    <div class="mx-auto" style="max-width: <%= params[:lookbook][:display][:max_width] || "100%" %>">
+      <%= yield %>
+    </div>
   </div>
 </body>
 </html>

@@ -1,5 +1,4 @@
-class Feedback::Banners::AlertComponentPreview < ViewComponent::Preview
-
+class Feedback::AlertComponentPreview < ViewComponent::Preview
   # Warning alert
   # --------------
   # Used to notify users about some potentially hard-to-undo consequences to an action.
@@ -7,7 +6,7 @@ class Feedback::Banners::AlertComponentPreview < ViewComponent::Preview
   # **Don't use this for form validation errors!** Use the form-specific messaging component instead.
   def warning
     render Feedback::AlertComponent.new(message: "This is a warning", style: :warn)
-  end 
+  end
 
   # Success alert
   # --------------
@@ -15,5 +14,4 @@ class Feedback::Banners::AlertComponentPreview < ViewComponent::Preview
   def success
     render Feedback::AlertComponent.new(message: "That was successful", style: :success)
   end
-  
 end

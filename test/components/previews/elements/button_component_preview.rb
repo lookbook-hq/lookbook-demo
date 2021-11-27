@@ -1,11 +1,24 @@
 class Elements::ButtonComponentPreview < ViewComponent::Preview
+  # 🎉 Button playground! 🎉
+  # -----------------------
+  # You can use the controls in the 'Params' section
+  # to set button property values on the fly.
+  #
+  # @param text
+  # @param theme [Symbol] select [primary, secondary, danger]
+  # @param arrow
+  def playground(text: "Click me", theme: :danger, arrow: false)
+    render Elements::ButtonComponent.new(theme: theme, arrow: arrow) do
+      text
+    end
+  end
 
-  # @!group 
-  
+  # @!group Themes
+
   # @label Primary (default)
   def with_default_theme
     render Elements::ButtonComponent.new do
-      "A primary action #{rand(8)}"
+      "A primary action"
     end
   end
 
@@ -15,7 +28,7 @@ class Elements::ButtonComponentPreview < ViewComponent::Preview
       "A less important action"
     end
   end
-  
+
   # @label Danger
   def with_danger_theme
     render Elements::ButtonComponent.new(theme: :danger) do
@@ -23,5 +36,5 @@ class Elements::ButtonComponentPreview < ViewComponent::Preview
     end
   end
 
-  # @!endgroup 
+  # @!endgroup
 end
