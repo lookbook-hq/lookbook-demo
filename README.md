@@ -4,6 +4,8 @@
 
 This demo app demonstrates a basic Lookbook installation with some example components adapted from [TailwindUI](https://tailwindui.com/).
 
+**View the demo: https://lookbook-demo-app.herokuapp.com/lookbook**
+
 ![Lookbook UI](.github/assets/lookbook_screenshot.png)
 
 ## Running the demo app locally
