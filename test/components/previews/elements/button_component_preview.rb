@@ -7,8 +7,9 @@ class Elements::ButtonComponentPreview < ViewComponent::Preview
   # @param text
   # @param theme [Symbol] select [primary, secondary, danger]
   # @param arrow
-  def playground(text: "Click me", theme: :danger, arrow: false)
-    render Elements::ButtonComponent.new(theme: theme, arrow: arrow) do
+  # @param icon
+  def playground(text: "Click me", theme: :danger, arrow: false, icon: false)
+    render Elements::ButtonComponent.new(theme: theme, arrow: arrow, icon: icon) do
       text
     end
   end

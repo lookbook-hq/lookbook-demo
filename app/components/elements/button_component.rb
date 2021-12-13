@@ -1,7 +1,8 @@
 class Elements::ButtonComponent < ViewComponent::Base
-  def initialize(theme: :default, arrow: false)
+  def initialize(theme: :default, arrow: false, icon: false)
     @theme = theme
     @arrow = arrow
+    @icon = icon
   end
 
   def theme_classes
