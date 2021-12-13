@@ -1,0 +1,13 @@
+<%= tag.div class: classes, data: data do %>
+  <% if rows.any? %>
+    <%= tag.div class: rows_classes do %>
+      <% rows.each do |row| %>
+        <%= tag.div class: row.classes, data: row.data do %>
+          <%= row %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= content %>
+  <% end %>
+<% end %>
