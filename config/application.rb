@@ -25,6 +25,11 @@ module LookbookDemo
     config.view_component.default_preview_layout = "preview"
     config.view_component.preview_controller = "PreviewController"
 
+    config.lookbook.preview_display_params = {
+      bg_color: "#fff",
+      max_width: "100%"
+    }
+
     config.lookbook.experimental_features = true # Opt in to ALL experimental features. Not recommended!
   end
 end

@@ -15,4 +15,19 @@ class Elements::CardComponentPreview < ViewComponent::Preview
       c.row { "Row" }
     end
   end
+
+  # @display bg_color "#409bf5"
+  # @display max_width 800px
+  def multiple_renders_failing
+    render(Elements::CardComponent.new) { "Card #1" }
+    render(Elements::CardComponent.new) { "Card #2" }
+    render(Elements::CardComponent.new) { "Card #3" }
+  end
+
+  ### ## Question:
+  ### Is it possible to pass `params` to the erb file?
+  # @display bg_color "#409bf5"
+  # @display max_width 800px
+  def multiple_renders_working
+  end
 end
