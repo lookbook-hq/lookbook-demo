@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="p-4">
-    <div class="mx-auto" style="max-width: <%= params[:lookbook][:display][:max_width] || "100%" %>">
+    <div class="mx-auto" style="max-width: <%= params.dig(:lookbook, :display, :max_width) || "100%" %>">
       <%= yield %>
     </div>
   </div>

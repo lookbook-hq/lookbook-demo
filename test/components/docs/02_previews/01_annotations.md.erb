@@ -1,0 +1,86 @@
+---
+id: annotations
+title: Annotating preview files
+---
+
+Lookbook parses [Yard-style comment tags](https://rubydoc.info/gems/yard/file/docs/Tags.md) in your preview class files to customise and extend the standard ViewComponent preview experience.
+
+**Tags** are just strings identified by their `@` prefix - for example `@hidden`. Tags are always placed in a comment above the relevant preview class or example method.
+
+## Example preview file:
+
+```ruby
+# @label Basic Button
+# @display bg_color "#fff"
+class ButtonComponentPreview < ViewComponent::Preview
+
+  # Primary button
+  # ---------------
+  # This is the button style you should use for most things.
+  #
+  # @label Primary
+  def default
+    render ButtonComponent.new do
+      "Click me"
+    end
+  end
+
+  # Button with icon
+  # ----------------
+  # This example uses dynamic preview parameters
+  # which can be edited live in the Lookbook UI
+  #
+  # @param text
+  # @param icon select [heart, cog, alert]
+  def icon(text: "Spread the love", icon: "heart")
+    render ButtonComponent.new(icon: icon) do
+      text
+    end
+  end
+
+  # Inverted button
+  # ---------------
+  # For light-on-dark screens
+  #
+  # @display bg_color "#000"
+  def secondary
+    render ButtonComponent.new(style: :inverted) do
+      "Click me"
+    end
+  end
+
+  # Unicorn button
+  # ---------------
+  # This button style is still a **work in progress**.
+  #
+  # @hidden
+  def secondary
+    render ButtonComponent.new do
+      "Click me"
+    end
+  end
+
+  # @!group More examples
+
+  def short_text
+    render ButtonComponent.new do
+      "Go"
+    end
+  end
+
+  def long_text
+    render ButtonComponent.new do
+      "Click here to do this thing because it's the best way to do it"
+    end
+  end
+
+  def emoji_text
+    render ButtonComponent.new do
+      "👀📗"
+    end
+  end
+
+  # @!endgroup
+
+end
+```

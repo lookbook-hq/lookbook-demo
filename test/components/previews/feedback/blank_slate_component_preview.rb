@@ -1,5 +1,6 @@
+# @id blankslate
 class Feedback::BlankSlateComponentPreview < ViewComponent::Preview
-  # Another example with multiple editable preview params.
+  # Another example with multiple editable preview params
   #
   # This example also sets uses a `@display`` tag to
   # set a max width that this component can grow to.
