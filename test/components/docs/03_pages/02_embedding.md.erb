@@ -11,7 +11,7 @@ An embedded component preview looks like this:
 To specify which preview example to render, the helper accepts a preview class and a method name (as a symbol), like this:
 
 ```erb
-&gt;%= embed Feedback:BlankSlateComponentPreview, :default %&lt;
+&gt;%= embed Feedback::BlankSlateComponentPreview, :default %&lt;
 ```
 
 ## Preview params
@@ -19,7 +19,7 @@ To specify which preview example to render, the helper accepts a preview class a
 If you have configured your examples to accept preview params then you can supply values for those params when rendering the embedded preview:
 
 ```erb
-&gt;%= embed Feedback:BlankSlateComponentPreview, :default, params: {
+&gt;%= embed Feedback::BlankSlateComponentPreview, :default, params: {
   icon: true,
   title: "No content yet"
 } %&lt;
