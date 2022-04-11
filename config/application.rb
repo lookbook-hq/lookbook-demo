@@ -24,6 +24,7 @@ module LookbookDemo
 
     config.view_component.default_preview_layout = "preview"
     config.view_component.preview_controller = "PreviewController"
+    config.view_component.show_previews = true
 
     config.lookbook.project_name = "Lookbook Demo"
     config.lookbook.experimental_features = true # Opt in to ALL experimental features. Not recommended!
