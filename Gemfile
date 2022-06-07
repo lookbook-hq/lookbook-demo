@@ -8,7 +8,6 @@ gem 'rails', '~> 7.0.3'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

@@ -3,22 +3,12 @@
   "private": true,
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.3",
-    "@rails/webpacker": "5.4.0",
     "alpinejs": "^3.2.3",
     "autoprefixer": "^10.3.1",
     "postcss": "^8.3.6",
     "postcss-loader": "^4.0.3",
     "tailwindcss": "^2.2.7",
-    "tippy.js": "^6.3.1",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "tippy.js": "^6.3.1"
   },
-  "version": "0.1.0",
-  "devDependencies": {
-    "webpack-dev-server": "^3.11.2"
-  },
-  "scripts": {
-    "start": "bin/webpack & bin/rails s",
-    "dev": "bin/webpack-dev-server & bin/rails s"
-  }
+  "version": "0.1.0"
 }
