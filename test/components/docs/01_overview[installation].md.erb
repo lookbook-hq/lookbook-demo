@@ -1,0 +1,28 @@
+---
+label: Installation
+position: 1 
+---
+
+Add Lookbook to your `Gemfile` somewhere **after** the ViewComponent gem. For example:
+
+```ruby
+gem "view_component", require: "view_component/engine"
+gem "lookbook"
+```
+
+### 2. Mount the Lookbook engine
+
+You then need to mount the Lookbook engine (at a path of your choosing) in your `routes.rb` file:
+
+```ruby
+Rails.application.routes.draw do
+  if Rails.env.development?
+    mount Lookbook::Engine, at: "/lookbook"
+  end
+end
+```
+
+The `at` property determines the root URL that the Lookbook UI will be served at.
+
+Then you can start your app as normal and navigate to `http://localhost:3000/lookbook` (or whatever mount path you specified) to view your component previews in the Lookbook UI.
+
