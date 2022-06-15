@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem "view_component"
-gem "lookbook", ">= 0.8.1"
+gem "lookbook", ">= 0.9.0"
 
 
 group :development, :test do
