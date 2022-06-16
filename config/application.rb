@@ -31,5 +31,11 @@ module LookbookDemo
 
     config.lookbook.project_name = "Lookbook Demo"
     config.lookbook.experimental_features = true # Opt in to ALL experimental features. Not recommended!
+
+    Lookbook.define_panel(:more, {
+      label: "More",
+      position: 4,
+      partial: "panels/custom",
+    })
   end
 end
