@@ -27,7 +27,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "sprockets-rails"
 
 gem "view_component"
-gem "lookbook", ">= 1.0.0.beta.3"
+gem "lookbook", ">= 1.0.0.beta.6"
 
 
 group :development, :test do

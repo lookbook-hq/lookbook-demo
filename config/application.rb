@@ -32,9 +32,13 @@ module LookbookDemo
     config.lookbook.project_name = "Lookbook Demo"
     config.lookbook.experimental_features = true # Opt in to ALL experimental features. Not recommended!
 
+    # Set some data properties to use in custom panels
+    Lookbook.data.docs_url = "https://beta.lookbook.build/"
+    Lookbook.data.random_emoji = ["❤️","☠️","💩","👀","😎"].sample
+
+    # Define a custom panel
     Lookbook.define_panel(:more, {
-      label: "More",
-      position: 4,
+      label: "More Info",
       partial: "panels/custom",
     })
   end

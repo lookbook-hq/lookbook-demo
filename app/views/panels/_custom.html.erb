@@ -1,13 +1,40 @@
+<style>
+  h3 {
+    background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .inline-code {
+    font-size: 12px;
+    font-weight: normal;
+    opacity: 0.6;
+    position: relative;
+    top: -1px;
+  }
+</style>
+
 <div class="prose">
 
   <h3>This is a custom panel!</h3>
 
-  <p>You can create as many custom panels as you like. Each custom panel uses a partial that lives in your app.</p>
+  <p>You can create as many custom panels as you like. Each custom panel uses a partial that lives in your app and can be individually styled without affecting the other parts of the UI.</p>
 
-  <p>Panel templates have access to data about the current preview/example as well as about all available previews, pages, components and more.</p>
-  
   <p>
-    For example, the preview that is currently being rendered is the <strong><%= preview.label %></strong> preview.<br>
-    It contains <strong><%= pluralize(examples.size, "example") %></strong> and renders the <strong><%= components.first.name %></strong> component.
+    Panel templates have access to data about the current preview/example as well as about all available previews, pages, components and more.
+    See the <a href="<%= data.docs_url %>/guide/extend/panels" target="_blank">inspector panel docs</a> for full details.
   </p>
+
+  <p>Some examples of data that can be accessed in custom panels:</p>
+  
+  <ul>
+    <li><strong>Project name:</strong> <%= config.project_name %> <code class="inline-code">&lt;%= config.project_name %></code></li>
+    <li><strong>Current preview:</strong> <%= preview.label %>  / <%= example.label %>  <code class="inline-code">&lt;%= preview.label %>  / &lt;%= example.label %></code></li>
+    <li><strong>Total number of preview classes:</strong> <%= app.previews.size %> <code class="inline-code">&lt;%= app.previews.size %></code></li>
+    <li>
+      <strong>Random emoji:</strong> <%= data.random_emoji %> <code class="inline-code">&lt;%= data.random_emoji %></code>
+    </li>
+  </ul>
+
+  <p><i>The random emoji is added to the <code><a href="<%= data.docs_url %>/guide/extend/data" target="_blank">Lookbook.data</a></code> object in `config/application.rb`. Restart the server to change!</i></p>
 </div>
