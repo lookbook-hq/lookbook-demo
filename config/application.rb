@@ -35,7 +35,6 @@ module LookbookDemo
     # Info panel -----------------
 
     Lookbook.data.docs_url = "https://beta.lookbook.build/"
-    Lookbook.data.random_emoji = ["❤️","☠️","💩","👀","😎"].sample
 
     Lookbook.define_panel(:more, {
       label: "Info",
