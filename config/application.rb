@@ -32,14 +32,43 @@ module LookbookDemo
     config.lookbook.project_name = "Lookbook Demo"
     config.lookbook.experimental_features = true # Opt in to ALL experimental features. Not recommended!
 
-    # Set some data properties to use in custom panels
+    # Info panel -----------------
+
     Lookbook.data.docs_url = "https://beta.lookbook.build/"
     Lookbook.data.random_emoji = ["❤️","☠️","💩","👀","😎"].sample
 
-    # Define a custom panel
     Lookbook.define_panel(:more, {
-      label: "More Info",
-      partial: "panels/custom",
+      label: "Info",
+      partial: "lookbook/panels/info",
     })
+
+    # Design panel -----------------
+
+    Lookbook.define_tag(:design, [:source, :url]) do |tag|
+      tag.source = tag.source.to_sym
+    end
+    
+    Lookbook.define_panel(:design, {
+      label: "Designs",
+      partial: "lookbook/panels/design",
+      disabled: lambda do |data|
+        data.preview.tags(:design).none? &&
+          data.examples.filter { |e| e.tag(:design).present? }.none?
+      end,
+      locals: lambda do |data|
+        entities_with_designs = []
+
+        if data.preview.tags(:design).any?
+          entities_with_designs << data.preview
+        end
+
+        entities_with_designs += data.examples.filter do |example|
+          example.tag(:design).present?
+        end
+
+        { entities_with_designs: entities_with_designs }
+      end
+    })
+
   end
 end

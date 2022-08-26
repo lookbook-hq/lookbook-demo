@@ -1,0 +1,86 @@
+<div class="designs-wrapper">
+  <% if entities_with_designs.none? %>
+    <p class="empty-message">No design assets available.</p>
+  <% end %>
+  <% entities_with_designs.each do |entity| %>
+    <% designs = entity.tags(:design) %>
+    <div class="entity">
+      <div class="designs">
+        <% designs.each do |design| %>
+          <div class="design design-<%= design.source %>">
+            <header class="design-header">
+              <h4 class="design-title">
+                <span>
+                  <%= preview.label %>
+                  <% if entity&.type == :example %>
+                    / <%= entity.label %>
+                  <% end %>
+                </span>
+              </h4>
+            </header>
+            <div class="design-display">
+              <% case design.source 
+                when :web %>
+                <img src="<%= design.url %>" class="embed embed-image">
+              <% when :figma %>
+                <iframe
+                  class="embed embed-figma"
+                  src="https://www.figma.com/embed?embed_host=astra&url=<%= design.url %>"
+                  allowfullscreen>
+              <% else %>
+              <p class="display-error">Failed to embed design from '<%= design.source %>' (unrecognised source).</p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<style>
+  .designs-wrapper {
+    padding-top: 6px;
+  }
+  .designs {
+    flex-grow: 1;
+    min-height: 100%;
+  }
+  .design-display {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1)
+  }
+  .design-header {
+    margin-bottom: 8px;
+    padding-left: 8px;
+  }
+  .design-title {
+    font-size: 14px;
+    opacity: 0.6;
+  }
+  .design-figma {
+    min-height: 500px;
+  }
+  .embed-figma {
+    width: 100%;
+    min-height: 500px;
+  }
+  .embed-image {
+    max-width: 100%;
+  }
+  .display-error {
+    opacity: 0.6;
+    font-style: italic;
+  }
+  .design + .design,
+  .entity + .entity {
+    margin-top: 30px
+  }
+  .empty-message {
+    opacity: 0.6;
+    font-style: italic;
+  }
+</style>

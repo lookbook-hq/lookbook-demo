@@ -7,6 +7,8 @@ class Feedback::BlankSlateComponentPreview < ViewComponent::Preview
   #
   # @display max_width 600px
   #
+  # @design web /designs/blank_slate_design.png
+  #
   # @param icon
   # @param content textarea
   # @param title
