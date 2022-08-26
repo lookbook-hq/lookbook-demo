@@ -27,8 +27,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "sprockets-rails"
 
 gem "view_component"
-gem "lookbook", ">= 1.0.0.beta.6"
 
+gem "lookbook", ">= 1.0.0.beta.7"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
