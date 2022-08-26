@@ -30,6 +30,8 @@ module LookbookDemo
     config.view_component.show_previews = true
 
     config.lookbook.project_name = "Lookbook Demo"
+    config.lookbook.debug_menu = true
+
     config.lookbook.experimental_features = true # Opt in to ALL experimental features. Not recommended!
 
     # Info panel -----------------
