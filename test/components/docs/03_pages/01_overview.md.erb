@@ -6,15 +6,25 @@ If you need to add more long-form documentation to live alongside your component
 
 **The documentation you are reading right now** is an example what pages look like when they are rendered.
 
-## Usage
+## Adding pages
 
-By default, pages should be placed in the `test/components/docs` directory (although this can be customised) and can be nested in directories as deeply as required.
+Pages should be placed in the `test/components/docs` directory (although this [can be customised](/api/config#pages)) and can be nested in directories as deeply as required.
 
-Pages must have  either a `.html.erb` or a `.md.erb` file extension. All pages are rendered as ERB templates but `.md.erb` files will also additionally be run through a markdown parser.
+```
+test/components/docs/
+  ├── overview.md.erb
+  ├── best_practices.md.erb
+  └── branding/
+      ├── logos.md.erb
+      └── themes.md.erb
+```
 
-Pages can optionally make use of a **YAML frontmatter block** to customise the behaviour and content of the page itself.
 
-An example page might look like this: 
+Pages must have either a `.html.erb` or a `.md.erb` file extension. All pages are rendered as ERB templates but `.md.erb` files will also additionally be run through a markdown parser.
+
+Pages can optionally make use of a [YAML frontmatter block](/guide/pages/frontmatter/) to customise the behaviour and content of the page itself.
+
+## Example page file
 
 ```markdown
 ---
@@ -28,8 +38,8 @@ contents will be run through a Markdown parser/renderer before display.
 Fenced code blocks are fully supported and will be highlighted appropriately.
 
 ERB can be used in here.
-The template will be rendered **before** being parsed as Markdown. 
+The template will be rendered **before** being parsed as Markdown.
 
 You can can access data about the page using the `@page` variable.
-The title of this page is "&gt;%= @page.title %&lt;".
+The title of this page is "<%= @page.title %>".
 ```

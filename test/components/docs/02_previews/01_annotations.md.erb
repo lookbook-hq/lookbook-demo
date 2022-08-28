@@ -3,11 +3,11 @@ id: annotations
 title: Annotating preview files
 ---
 
-Lookbook parses [Yard-style comment tags](https://rubydoc.info/gems/yard/file/docs/Tags.md) in your preview class files to customise and extend the standard ViewComponent preview experience.
+Lookbook extends the standard ViewComponent preview classes using [Yard-style](https://rubydoc.info/gems/yard/file/docs/Tags.md) comment annotations in the source code.
 
-**Tags** are just strings identified by their `@` prefix - for example `@hidden`. Tags are always placed in a comment above the relevant preview class or example method.
+**Head over to the Lookbook site to [find out more about previews and tags &rarr;](https://beta.lookbook.build)**
 
-## Example preview file:
+## Example preview file
 
 ```ruby
 # @label Basic Button
@@ -51,10 +51,11 @@ class ButtonComponentPreview < ViewComponent::Preview
 
   # Unicorn button
   # ---------------
-  # This button style is still a **work in progress**.
+  # This button style is still a **work in progress**
+  # and so has been hidden from the navigation.
   #
   # @hidden
-  def secondary
+  def unicorn
     render ButtonComponent.new do
       "Click me"
     end
@@ -81,6 +82,5 @@ class ButtonComponentPreview < ViewComponent::Preview
   end
 
   # @!endgroup
-
 end
 ```
