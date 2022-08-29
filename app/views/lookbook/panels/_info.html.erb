@@ -12,24 +12,30 @@
     position: relative;
     top: -1px;
   }
+  .lookbook-panel {
+    background: white;
+  }
 </style>
 
-<div class="prose">
+<div class="lookbook-panel">
 
-  <h3>This is a custom panel!</h3>
+  <div class="prose">
 
-  <p>You can create as many custom panels as you like. Each custom panel uses a partial that lives in your app and can be individually styled without affecting the other parts of the UI.</p>
+    <h3>This is a custom panel!</h3>
 
-  <p>
-    Panel templates have access to data about the current preview/example as well as about all available previews, pages, components and more.
-    See the <a href="<%= data.docs_url %>/guide/extend/panels" target="_blank">inspector panel docs</a> for full details.
-  </p>
+    <p>You can create as many custom panels as you like. Each custom panel uses a partial that lives in your app and can be individually styled without affecting the other parts of the UI.</p>
 
-  <p>Some examples of data that can be accessed in custom panels:</p>
-  
-  <ul>
-    <li><strong>Project name:</strong> <%= config.project_name %> <code class="inline-code">&lt;%= config.project_name %></code></li>
-    <li><strong>Current preview:</strong> <%= preview.label %>  / <%= example.label %>  <code class="inline-code">&lt;%= preview.label %>  / &lt;%= example.label %></code></li>
-    <li><strong>Total number of preview classes:</strong> <%= app.previews.size %> <code class="inline-code">&lt;%= app.previews.size %></code></li>
-  </ul>
+    <p>
+      Panel templates have access to data about the current preview/example as well as about all available previews, pages, components and more.
+      See the <a href="<%= data.docs_url %>/guide/extend/panels" target="_blank">inspector panel docs</a> for full details.
+    </p>
+
+    <p>Some examples of data that can be accessed in custom panels:</p>
+    
+    <ul>
+      <li><strong>Project name:</strong> <%= config.project_name %> <code class="inline-code">&lt;%= config.project_name %></code></li>
+      <li><strong>Current preview:</strong> <%= preview.label %>  / <%= example.label %>  <code class="inline-code">&lt;%= preview.label %>  / &lt;%= example.label %></code></li>
+      <li><strong>Total number of preview classes:</strong> <%= app.previews.size %> <code class="inline-code">&lt;%= app.previews.size %></code></li>
+    </ul>
+  </div>
 </div>

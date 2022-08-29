@@ -1,4 +1,4 @@
-<div class="designs-wrapper">
+<div class="lookbook-panel">
   <% if entities_with_designs.none? %>
     <p class="empty-message">No design assets available.</p>
   <% end %>
@@ -39,8 +39,8 @@
 </div>
 
 <style>
-  .designs-wrapper {
-    padding-top: 6px;
+  .lookbook-panel {
+    margin-top: 6px;
   }
   .designs {
     flex-grow: 1;
@@ -51,7 +51,8 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1)
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 16px;
   }
   .design-header {
     margin-bottom: 8px;
@@ -70,6 +71,8 @@
   }
   .embed-image {
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .display-error {
     opacity: 0.6;
