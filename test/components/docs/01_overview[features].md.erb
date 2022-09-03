@@ -1,16 +1,26 @@
 ---
 position: 2
+label: New features in v1.0 
 ---
 
-Lookbook provides:
+Lookbook v1.0 includes a completely re-written UI, many under-the hood improvements and a some exciting new customisation options.
 
-- Tree-style component browser with live search/filter
-- Resizable preview window for responsive testing
-- Highlighted preview source code and HTML output
-- Live refresh when component or preview files are updated _(Rails v6.0+ only)_
-- Comment tag annotations for granular customisation of the preview experience
-- Fully compatible with standard the ViewComponent preview system
-- In-browser live-editable preview parameters (similar to basic Storybook Controls/Knobs)
-- Markdown-powerered 'live' documentation pages with embeddable previews
-- A themeable, extendable UI that you can customise to match the needs of your project
-- And more!
+### Frontend changes:
+
+* Completely re-written UI - now built with ViewComponents
+* New [UI themes and customisation options](https://lookbook.build/guide/themes/)
+* Improved small-screen/mobile view
+* Debug menu
+* ...and many other small visual and usability improvements
+
+### New options for extending Lookbook:
+
+* Define [custom tags](https://lookbook.build/guide/extend/tags/) for preview file annotations
+* Create [your own tab panels](https://lookbook.build/guide/extend/panels/) - with complete control over content/layout and access to all Lookbook data
+* Use [lifecycle hooks](https://lookbook.build/guide/extend/hooks/) to run your own code when Lookbook starts up, when files change or at shutdown
+
+### Other changes
+
+* 'Workbench' app for developing Lookbook's UI components in Lookbook
+* New Rspec-based test suite and dummy app
+* All new [documentation site](https://lookbook.build) built using [Bridgetown](https://www.bridgetownrb.com/)
