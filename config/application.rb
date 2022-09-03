@@ -36,7 +36,7 @@ module LookbookDemo
 
     # Info panel -----------------
 
-    Lookbook.data.docs_url = "https://beta.lookbook.build/"
+    Lookbook.data.docs_url = "https://lookbook.build/"
 
     Lookbook.define_panel(:more, {
       label: "Info",
