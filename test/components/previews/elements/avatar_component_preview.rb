@@ -1,6 +1,6 @@
+# @asset postcss.config.js
 class Elements::AvatarComponentPreview < ViewComponent::Preview
   # @label Rounded
-  #
   # @param size [Symbol] select [[Small, sm], [Medium, md], [Large, lg]]]
   def default(size: :md)
     render Elements::AvatarComponent.new(src: "https://placekitten.com/300/300", size: size)

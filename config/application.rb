@@ -34,13 +34,31 @@ module LookbookDemo
 
     config.lookbook.experimental_features = true # Opt in to ALL experimental features. Not recommended!
 
+    # Assets panel  -----------------
+
+    Lookbook.define_panel(:assets, {
+      label: "Assets",
+      partial: "lookbook/panels/assets",
+      locals: lambda do |data|
+        assets = data.preview.components.map do |component|
+          Dir["#{data.app.config.components_path}/#{component.name.underscore}.*"].map do |path|
+            file = Pathname.new path
+            if [".js", ".css"].include? file.extname.downcase
+              file 
+            end
+          end
+        end.flatten.compact
+        { assets: assets }
+      end
+    })
+
     # Info panel -----------------
 
     Lookbook.data.docs_url = "https://lookbook.build/"
 
     Lookbook.define_panel(:more, {
       label: "Info",
-      partial: "lookbook/panels/info",
+      partial: "lookbook/panels/info"
     })
 
     # Design panel -----------------
