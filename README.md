@@ -1,12 +1,12 @@
 # Lookbook Demo App
 
-[Lookbook](https://github.com/allmarkedup/lookbook) is a tool to help develop, test and document [ViewComponents](https://viewcomponent.org/) in isolation.
+[Lookbook](https://github.com/allmarkedup/lookbook) is a tool to help browse, develop, test & document [ViewComponents](https://viewcomponent.org/) in your app.
 
 ---
 
 This demo app demonstrates a basic Lookbook installation with some example components adapted from [TailwindUI](https://tailwindui.com/).
 
-**View the demo: https://lookbook-demo-app-v1-0-beta.herokuapp.com//lookbook**
+**View the demo: https://lookbook-demo.herokuapp.com/lookbook**
 
 ![Lookbook UI](.github/assets/lookbook_screenshot.png)
 
