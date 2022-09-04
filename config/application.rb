@@ -34,19 +34,16 @@ module LookbookDemo
 
     # Assets panel  -----------------
 
-    Lookbook.define_panel(:assets, {
+    Lookbook.define_panel("assets", {
       label: "Assets",
       partial: "lookbook/panels/assets",
       locals: lambda do |data|
         assets = data.preview.components.map do |component|
-          # Look for assets with the same name/path as the component file but with a .js or .css extension
-          # For example `app/components/elements/button.rb` -> `app/components/elements/button.js`
-          Dir["#{data.app.config.components_path}/#{component.name.underscore}.*"].map do |path|
-            file = Pathname.new path
-            if [".js", ".css"].include? file.extname.downcase
-              file 
-            end
-          end
+          # This example expects assets to have the same path as the related component `.rb`
+          # file but with a `.js` or `.css` extension
+          # `app/components/elements/button.rb` -> `app/components/elements/button.js`
+          asset_files = Dir["#{component.full_path.chomp(".rb")}.{css,js}"]
+          asset_files.map { |path| Pathname.new path }
         end.flatten.compact
         { assets: assets }
       end
@@ -56,7 +53,7 @@ module LookbookDemo
 
     Lookbook.data.docs_url = "https://lookbook.build/"
 
-    Lookbook.define_panel(:more, {
+    Lookbook.define_panel("more", {
       label: "Info",
       partial: "lookbook/panels/info"
     })
