@@ -42,7 +42,7 @@ module LookbookDemo
           # This example expects assets to have the same path as the related component `.rb`
           # file but with a `.js` or `.css` extension
           # `app/components/elements/button.rb` -> `app/components/elements/button.js`
-          asset_files = Dir["#{component.full_path.chomp(".rb")}.{css,js}"]
+          asset_files = Dir["#{component.full_path.to_s.chomp(".rb")}.{css,js}"]
           asset_files.map { |path| Pathname.new path }
         end.flatten.compact
         { assets: assets }
