@@ -4,14 +4,12 @@ class Elements::ButtonComponent < ViewComponent::Base
     @arrow = arrow
   end
 
-  def theme_classes
+  def theme_class
     case @theme
     when :danger
-      "bg-red-600 hover:bg-red-700 focus:ring-red-500"
+      "button-danger"
     when :secondary
-      "bg-gray-500 hover:bg-gray-600 focus:ring-gray-400"
-    else
-      "bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500"
+      "button-secondary"
     end
   end
 end

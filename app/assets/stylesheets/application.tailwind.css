@@ -1,3 +1,6 @@
+@import "../../components/elements/avatar_component";
+@import "../../components/elements/button_component";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

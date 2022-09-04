@@ -4,9 +4,9 @@ class Elements::AvatarComponent < ViewComponent::Base
     @classes = class_names({
       "rounded-lg": square,
       "rounded-full": !square,
-      "h-8 w-8": size == :sm,
-      "h-20 w-20": size == :md,
-      "h-32 w-32": size == :lg
+      "avatar-sm": size == :sm,
+      "avatar-md": size == :md,
+      "avatar-lg": size == :lg
     })
   end
 end
