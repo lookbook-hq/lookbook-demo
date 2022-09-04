@@ -32,8 +32,6 @@ module LookbookDemo
     config.lookbook.project_name = "Lookbook Demo"
     config.lookbook.debug_menu = true
 
-    config.lookbook.experimental_features = true # Opt in to ALL experimental features. Not recommended!
-
     # Assets panel  -----------------
 
     Lookbook.define_panel(:assets, {
@@ -41,6 +39,8 @@ module LookbookDemo
       partial: "lookbook/panels/assets",
       locals: lambda do |data|
         assets = data.preview.components.map do |component|
+          # Look for assets with the same name/path as the component file but with a .js or .css extension
+          # For example `app/components/elements/button.rb` -> `app/components/elements/button.js`
           Dir["#{data.app.config.components_path}/#{component.name.underscore}.*"].map do |path|
             file = Pathname.new path
             if [".js", ".css"].include? file.extname.downcase
