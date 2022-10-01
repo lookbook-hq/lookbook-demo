@@ -31,12 +31,12 @@ module LookbookDemo
 
     config.lookbook.project_name = "Lookbook Demo"
     config.lookbook.debug_menu = true
+    config.lookbook.preview_params_options_eval = true
 
     # Assets panel  -----------------
 
-    Lookbook.define_panel("assets", {
+    Lookbook.define_panel("assets", "lookbook/panels/assets", {
       label: "Assets",
-      partial: "lookbook/panels/assets",
       locals: lambda do |data|
         assets = data.preview.components.map do |component|
           # This example expects assets to have the same path as the related component `.rb`
@@ -48,43 +48,5 @@ module LookbookDemo
         { assets: assets }
       end
     })
-
-    # Info panel -----------------
-
-    Lookbook.data.docs_url = "https://lookbook.build/"
-
-    Lookbook.define_panel("more", {
-      label: "Info",
-      partial: "lookbook/panels/info"
-    })
-
-    # Design panel -----------------
-
-    Lookbook.define_tag(:design, [:source, :url]) do |tag|
-      tag.source = tag.source.to_sym
-    end
-    
-    Lookbook.define_panel(:design, {
-      label: "Designs",
-      partial: "lookbook/panels/design",
-      disabled: lambda do |data|
-        data.preview.tags(:design).none? &&
-          data.examples.filter { |e| e.tag(:design).present? }.none?
-      end,
-      locals: lambda do |data|
-        entities_with_designs = []
-
-        if data.preview.tags(:design).any?
-          entities_with_designs << data.preview
-        end
-
-        entities_with_designs += data.examples.filter do |example|
-          example.tag(:design).present?
-        end
-
-        { entities_with_designs: entities_with_designs }
-      end
-    })
-
   end
 end

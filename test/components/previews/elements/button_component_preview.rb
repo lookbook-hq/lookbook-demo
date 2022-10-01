@@ -5,7 +5,7 @@ class Elements::ButtonComponentPreview < ViewComponent::Preview
   # to set button property values on the fly.
   #
   # @param text
-  # @param theme [Symbol] select [primary, secondary, danger]
+  # @param theme select :theme_options
   # @param arrow
   def playground(text: "Click me", theme: :danger, arrow: false)
     render Elements::ButtonComponent.new(theme: theme, arrow: arrow) do
@@ -37,4 +37,10 @@ class Elements::ButtonComponentPreview < ViewComponent::Preview
   end
 
   # @!endgroup
+
+  private
+
+  def theme_options
+    Elements::ButtonComponent::THEMES
+  end
 end

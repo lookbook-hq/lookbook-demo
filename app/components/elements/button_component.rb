@@ -1,4 +1,6 @@
 class Elements::ButtonComponent < ViewComponent::Base
+  THEMES = %i[primary secondary danger].freeze
+
   def initialize(theme: :default, arrow: false)
     @theme = theme
     @arrow = arrow

@@ -1,4 +1,10 @@
 <style type="text/css">
+  p {
+    font-size: 1rem
+  }
+  p a {
+    text-decoration: underline;
+  }
   .asset-preview + .asset-preview {
     margin-top: 30px;
   }
@@ -23,9 +29,31 @@
     border-radius: 6px;
     border: 1px solid var(--lookbook-divider);
   }
+  .notice {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    padding: 16px 20px;
+    border: 1px solid rgb(191,219,254);
+    background: #eff6ffcc;
+    color: rgba(29,78,216, 0.7);
+    text-align: center;
+    line-height: 1.4;
+  }
+  .no-assets {
+    opacity: 0.7;
+    text-align: center;
+    line-height: 1.6;
+    padding: 30px;
+  }
 </style>
 
 <div class="lookbook-panel">
+  <div class="notice">
+    <p><strong>This is a custom panel!</strong>
+    See the <a href="https://lookbook.build/guide/extend/panels/">documentation</a> for details on how to add custom panels to
+    your Lookbook instance.
+    </p>
+  </div>
   <% if assets.any? %>
     <% assets.each do |asset| %>
       <div class="asset-preview">
@@ -39,7 +67,10 @@
       </div>
     <% end %>
   <% else %>
-    <p>No assets to display.</p>
+    <p class="no-assets">
+      <strong>No assets to display.</strong><br>
+      Check out the <a href="/lookbook/inspect/elements/button/playground">button component preview</a> to see an example with asset files.
+    </p>
   <% end %>
 </div>
 
