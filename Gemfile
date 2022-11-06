@@ -28,7 +28,7 @@ gem "sprockets-rails"
 
 gem "view_component", "2.63.0"
 
-gem "lookbook", ">= 1.3.1"
+gem "lookbook", ">= 1.3.3"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
