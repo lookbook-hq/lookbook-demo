@@ -3,10 +3,11 @@
 <head>
   <title>Component Preview</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= stylesheet_link_tag 'tailwind', media: 'all' %>
+  
+  <%= render "layouts/head" %>
 </head>
 <body>
-  <div class="p-4">
+  <div class="p-6">
     <div class="mx-auto" style="max-width: <%= lookbook_display(:max_width, "100%") %>">
       <%= yield %>
     </div>

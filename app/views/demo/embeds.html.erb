@@ -1,0 +1,70 @@
+<%
+embeds = [
+  {
+    name: "Basic Embed",
+    emoji: "🤟",
+    props: {
+      preview: "Feedback::AlertComponentPreview",
+      example: "success"
+    }
+  },
+  {
+    name: "Tab drawer",
+    emoji: "👊",
+    props: {
+      preview: "Feedback::BlankSlateComponentPreview",
+      example: "default",
+      panels: "params,source,output",
+    }
+  },
+  {
+    name: "Preview example switcher",
+    emoji: "👌",
+    props: {
+      preview: "Feedback::AlertComponentPreview",
+      examples: "danger,success,warning",
+      panels: "*"
+    }
+  }
+]
+%>
+
+<div class="space-y-10">
+  <div class="space-y-4">
+    <header class="flex items-center mb-6">
+      <h1 class="text-3xl font-bold text-indigo-700">Lookbook Preview Embeds</h1>
+      <a class="ml-auto text-base" href="<%= lookbook_path %>">Back to Lookbook</a>
+    </header>
+
+    <p>It is now possible to embed component previews outside of Lookbook, either in the parent app or on another site entirely.</p>
+  </div>
+
+  <div class="!mt-8">
+    <h2 class="text-xl font-bold mb-4">Using embeds</h2>
+
+    <ol class="list-decimal ml-4 space-y-2 !my-6">
+      <li>Add embeds to your page using <code>&lt;lookbook-embed&gt;</code> elements with the appropriate attributes (see examples below).</li>
+      <li>Include the <a href="/lookbook-assets/js/lookbook.js"><code>lookbook.js</code></a> script (served by your app at <code>/lookbook-assets/js/lookbook.js</code>) at the bottom of your page.</li>
+      <li>Add the embed initializer call - <code>Lookbook.initEmbeds()</code></li>
+    </ol>
+    
+    <%= code class: "!mt-6" do %>
+    <lookbook-embed app="//localhost:3000/lookbook" preview="Elements::ButtonComponentPreview" example="default"></lookbook-embed>
+      
+    <script src="lookbook.js"></script>
+    <script>Lookbook.initEmbeds();</script>
+    <% end %>
+  </div>
+
+  <div class="">
+    <h2 class="text-xl font-bold mb-4">Examples</h2>
+
+    <p>Below are some examples highlighting some of the available configuration options.</p>
+
+    <div class="space-y-8 mt-8">
+      <% embeds.each do |data| %>
+        <%= render "demo/embed", **data %>
+      <% end %>
+    </div>
+  </div>
+</div>

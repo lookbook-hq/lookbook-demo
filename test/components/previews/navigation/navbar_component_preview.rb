@@ -4,6 +4,7 @@ class Navigation::NavbarComponentPreview < ViewComponent::Preview
   #
   # A quick tip - this text itself is just a comment added above the appropriate preview method.
   # _You can use_ [markdown](https://daringfireball.net/projects/markdown/syntax) in your **comments** too!
+  # @source elements/avatar.js
   def dark
   end
 end

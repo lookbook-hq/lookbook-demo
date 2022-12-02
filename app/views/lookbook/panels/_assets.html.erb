@@ -54,6 +54,7 @@
     your Lookbook instance.
     </p>
   </div>
+
   <% if assets.any? %>
     <% assets.each do |asset| %>
       <div class="asset-preview">
@@ -62,7 +63,7 @@
           <h4 class="asset-title font-mono"><%= asset.basename %></h4>
         </header>
         <div class="asset-contents">
-          <%= code language: :ruby, line_numbers: true do %><%== File.read(asset) %><% end %>
+          <%= code language: Lookbook::Lang.guess(asset, :ruby)[:name], line_numbers: true do %><%== File.read(asset) %><% end %>
         </div>
       </div>
     <% end %>

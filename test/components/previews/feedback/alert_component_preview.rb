@@ -14,4 +14,11 @@ class Feedback::AlertComponentPreview < ViewComponent::Preview
   def success
     render Feedback::AlertComponent.new(message: "That was successful", style: :success)
   end
+
+  # Danger alert
+  # --------------
+  # Used to notify users that something bad has happened.
+  def danger
+    render Feedback::AlertComponent.new(message: "That was bad", style: :danger)
+  end
 end

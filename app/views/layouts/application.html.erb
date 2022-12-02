@@ -6,11 +6,24 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag 'tailwind', media: 'all' %>
+  <%= render "layouts/head" %>
 </head>
-<body>
-    <main class="mx-auto px-5 flex">
+<body class="px-8 py-10 mx-auto max-w-7xl">
+<%# 
+  <header class="py-6 px-4 mb-8 flex items-center border-b border-gray-300">
+    <a href="/" class="text-xl font-bold">Demo App</a>
+
+    <nav class="flex items-center ml-auto space-x-6">
+      <a href="/embeds">Embed examples</a>
+      <a href="/lookbook" class="px-3 py-1.5 bg-indigo-600 text-white tracking-wide rounded-md">Components</a>
+    </nav>
+  </header> %>
+
+  <main>
     <%= yield %>
-    </main>
+  </main>
+
+  <script src="/lookbook-assets/js/lookbook.js"></script>
+  <script>Lookbook.initEmbeds();</script>
 </body>
 </html>

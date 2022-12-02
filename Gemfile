@@ -4,7 +4,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.0.3'
+# gem 'rails', '~> 7.0.3'
+
+
+gem "actionpack"
+gem "actionview"
+gem "actiontext"
+gem "activesupport"
+gem "actioncable"
+gem "railties"
+
+
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
@@ -27,8 +37,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "sprockets-rails"
 
 gem "view_component"
+gem "phlex-rails"
 
-gem "lookbook", ">= 1.4.1"
+gem "lookbook", path: "../lookbook"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,7 +54,7 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring'
 end
 
 group :test do
@@ -57,4 +68,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "tailwindcss-rails", "~> 2.0"
+gem "cssbundling-rails", "~> 1.1"
