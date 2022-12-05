@@ -5,8 +5,8 @@ module Views::Phlex
 		end
 
 		def template
-			div class: "prose max-w-[600px] text-center mx-auto p-8 border-dashed border-2 rounded-md border-fuschia-600" do
-				h3 { "Phlex example #{@emoji}" }
+			div class: "prose text-center mx-auto p-8 rounded-lg bg-green-50 border-dashed border-2 border-green-400" do
+				h3(class: "text-xl font-bold mb-4") { "Phlex example #{@emoji}" }
 				p { "This is a Phlex component being rendered by Lookbook." }
 			end
 		end

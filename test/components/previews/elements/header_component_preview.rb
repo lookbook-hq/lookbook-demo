@@ -5,11 +5,11 @@ class Elements::HeaderComponentPreview < ViewComponent::Preview
   # @param text
   def standard(text: "This is some header text")
     render Elements::HeaderComponent.new do
-      text + "ss"
+      text
     end
   end
 
-  # @!group SizeS
+  # @!group Sizes
 
   def small
     render Elements::HeaderComponent.new(size: 20) do

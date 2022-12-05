@@ -1,9 +1,7 @@
-# @asset postcss.config.js
 class Elements::AvatarComponentPreview < ViewComponent::Preview
-  # @label Roundedasdasd
+  # @label Rounded
   # @param size [Symbol] select "The size to display the avatar at." { choices: [[Small, sm], [Medium, md], [Large, lg]] }
   # @component Elements::ButtonComponent
-  # @source elements/avatar.js
   def default(size: :md)
     render Elements::AvatarComponent.new(src: "https://placekitten.com/300/300", size: size)
   end
