@@ -30,6 +30,10 @@ module LookbookDemo
 
     config.public_file_server.enabled = true
 
+    config.action_dispatch.default_headers = {
+      "X-Frame-Options" => "ALLOWALL"
+    }
+
     config.view_component.default_preview_layout = "preview"
     config.view_component.preview_controller = "PreviewController"
     config.view_component.show_previews = true
