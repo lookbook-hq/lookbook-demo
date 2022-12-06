@@ -38,7 +38,7 @@ module LookbookDemo
     config.view_component.preview_controller = "PreviewController"
     config.view_component.show_previews = true
 
-    config.lookbook.project_name = "Lookbook Demo"
+    config.lookbook.project_name = "Lookbook v2 Demo"
     config.lookbook.debug_menu = true
 
     # Assets panel  -----------------
