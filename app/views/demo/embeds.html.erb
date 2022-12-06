@@ -58,7 +58,11 @@
     </ol>
     
     <%= code class: "!mt-6" do %>
-    <lookbook-embed app="//localhost:3000/lookbook" preview="Elements::ButtonComponentPreview" example="default"></lookbook-embed>
+    <lookbook-embed
+      app="//your-app.com/lookbook"
+      preview="Elements::ButtonComponentPreview"
+      example="default">
+    </lookbook-embed>
      
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
     <script src="/path/to/lookbook.js"></script>
@@ -66,7 +70,7 @@
     <% end %>
   </div>
 
-  <div class="">
+  <div>
     <h2 class="text-xl font-bold mb-4">Examples</h2>
 
     <p>Below are some examples highlighting some of the available configuration options.</p>
