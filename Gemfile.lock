@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ViewComponent/lookbook.git
-  revision: 0110b98f28e2dda2cdf8f46598f23c7e9dc7a1b3
+  revision: aa936de87ef6c22cbc58e6648db66e31a3ec1d10
   branch: v2.0-wip
   specs:
     lookbook (1.4.2)
