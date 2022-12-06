@@ -104,7 +104,7 @@ GEM
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    lookbook (1.4.2)
+    lookbook (1.4.3)
       actioncable
       activemodel
       css_parser
@@ -241,7 +241,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  lookbook (>= 1.4.2)
+  lookbook (>= 1.4.3)
   pg
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
