@@ -1,39 +1,42 @@
 <%
-embeds = [
-  {
-    name: "Basic Embed",
-    emoji: "🤟",
-    props: {
-      preview: "Feedback::AlertComponentPreview",
-      example: "success"
+  embeds = [
+    {
+      name: "Basic Embed",
+      emoji: "🎉",
+      props: {
+        preview: "Feedback::AlertComponentPreview",
+        example: "success"
+      }
+    },
+    {
+      name: "Tab drawer",
+      emoji: "🎉",
+      props: {
+        preview: "Feedback::BlankSlateComponentPreview",
+        example: "default",
+        panels: "params,source,output",
+      }
+    },
+    {
+      name: "Preview example switcher",
+      emoji: "🎉",
+      props: {
+        preview: "Feedback::AlertComponentPreview",
+        examples: "danger,success,warning",
+        panels: "*"
+      }
     }
-  },
-  {
-    name: "Tab drawer",
-    emoji: "👊",
-    props: {
-      preview: "Feedback::BlankSlateComponentPreview",
-      example: "default",
-      panels: "params,source,output",
-    }
-  },
-  {
-    name: "Preview example switcher",
-    emoji: "👌",
-    props: {
-      preview: "Feedback::AlertComponentPreview",
-      examples: "danger,success,warning",
-      panels: "*"
-    }
-  }
-]
+  ]
 %>
 
 <div class="space-y-10">
   <div class="space-y-4">
     <header class="flex items-center mb-6">
       <h1 class="text-3xl font-bold text-indigo-700">Lookbook Preview Embeds</h1>
-      <a class="ml-auto text-base" href="<%= lookbook_path %>">Back to Lookbook</a>
+      <nav class="ml-auto text-base flex items-center space-x-4">
+        <a href="/">Overview</a>
+        <a href="<%= lookbook_path %>">Lookbook UI</a>
+      </nav>
     </header>
 
     <p>It is now possible to embed component previews outside of Lookbook, either in the parent app or on another site entirely.</p>
@@ -42,16 +45,23 @@ embeds = [
   <div class="!mt-8">
     <h2 class="text-xl font-bold mb-4">Using embeds</h2>
 
+    <p class="text-base text-gray-500 italic">
+      Note: Lookbook preview embeds depend upon the <a href="https://github.com/davidjbradshaw/iframe-resizer">iFrameResizer</a> library.
+      This must be included in the page before the Lookbook JS file.
+    </p>
+
     <ol class="list-decimal ml-4 space-y-2 !my-6">
-      <li>Add embeds to your page using <code>&lt;lookbook-embed&gt;</code> elements with the appropriate attributes (see examples below).</li>
+      <li>Add embeds to your page using <code>&lt;lookbook-embed&gt;</code> custom elements with appropriate attribute values set (see examples below).</li>
+      <li>Include the main <a href="https://github.com/davidjbradshaw/iframe-resizer"></a>`iFrameResizer` script</a> in the page - either from a CDN or imported from NPM</li>
       <li>Include the <a href="/lookbook-assets/js/lookbook.js"><code>lookbook.js</code></a> script (served by your app at <code>/lookbook-assets/js/lookbook.js</code>) at the bottom of your page.</li>
       <li>Add the embed initializer call - <code>Lookbook.initEmbeds()</code></li>
     </ol>
     
     <%= code class: "!mt-6" do %>
     <lookbook-embed app="//localhost:3000/lookbook" preview="Elements::ButtonComponentPreview" example="default"></lookbook-embed>
-      
-    <script src="lookbook.js"></script>
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+    <script src="/path/to/lookbook.js"></script>
     <script>Lookbook.initEmbeds();</script>
     <% end %>
   </div>
