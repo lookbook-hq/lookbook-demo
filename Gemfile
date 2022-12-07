@@ -19,7 +19,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "sprockets-rails"
 gem "cssbundling-rails", "~> 1.1"
 
-gem "phlex-rails", git: "https://github.com/joeldrapper/phlex-rails.git", branch: "main"
+gem "phlex-rails"
 
 gem "view_component"
 gem "lookbook", git: "https://github.com/ViewComponent/lookbook.git", branch: "v2.0-wip"

@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/ViewComponent/lookbook.git
-  revision: aa936de87ef6c22cbc58e6648db66e31a3ec1d10
+  revision: ff193f0f04b8ce5f387d2c2c3748128bbf2d015a
   branch: v2.0-wip
   specs:
-    lookbook (1.4.2)
+    lookbook (1.4.3)
       activemodel
       css_parser
       htmlbeautifier (~> 1.3)
@@ -14,16 +14,6 @@ GIT
       view_component (~> 2.0)
       yard (~> 0.9.25)
       zeitwerk (~> 2.5)
-
-GIT
-  remote: https://github.com/joeldrapper/phlex-rails.git
-  revision: 593952a8a02d97b6fd3ae01375be9c8b9062be7d
-  branch: main
-  specs:
-    phlex-rails (0.3.1)
-      phlex (>= 1.0.0.rc1, < 2)
-      rails (>= 6.1, < 8)
-      zeitwerk (~> 2)
 
 GEM
   remote: https://rubygems.org/
@@ -96,7 +86,7 @@ GEM
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     bindex (0.8.1)
-    bootsnap (1.13.0)
+    bootsnap (1.15.0)
       msgpack (~> 1.2)
     builder (3.2.4)
     byebug (11.1.3)
@@ -109,7 +99,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     css_parser (1.12.0)
@@ -154,10 +143,14 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
-    pg (1.4.4)
+    pg (1.4.5)
     phlex (1.0.0.rc2)
       zeitwerk (~> 2.6)
-    public_suffix (5.0.0)
+    phlex-rails (0.3.2)
+      phlex (>= 1.0.0.rc1, < 2)
+      rails (>= 6.1, < 8)
+      zeitwerk (~> 2)
+    public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.1)
@@ -197,12 +190,11 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redcarpet (3.5.1)
-    regexp_parser (2.6.0)
+    regexp_parser (2.6.1)
     rexml (3.2.5)
     rouge (4.0.0)
     rubyzip (2.3.2)
-    selenium-webdriver (4.6.1)
-      childprocess (>= 0.5, < 5.0)
+    selenium-webdriver (4.7.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -217,7 +209,7 @@ GEM
     timeout (0.3.1)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    view_component (2.75.0)
+    view_component (2.78.0)
       activesupport (>= 5.0.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
@@ -258,7 +250,7 @@ DEPENDENCIES
   listen (~> 3.3)
   lookbook!
   pg
-  phlex-rails!
+  phlex-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   railties
