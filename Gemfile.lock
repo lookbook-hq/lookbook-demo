@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/ViewComponent/lookbook.git
-  revision: ff193f0f04b8ce5f387d2c2c3748128bbf2d015a
-  branch: v2.0-wip
+  revision: b27b2e308d319cbfcf85c31dc6fd6450fbbca97b
+  branch: v2
   specs:
     lookbook (1.4.3)
       activemodel
@@ -235,6 +235,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -262,7 +263,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.1.3p185
 
 BUNDLED WITH
    2.3.11

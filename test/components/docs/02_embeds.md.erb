@@ -1,0 +1,45 @@
+---
+id: embeds
+label: Embedding Previews
+---
+
+You can embed live preview examples into documentation pages (like this one!) as well as on pages outside of Lookbook.
+
+## Embedding previews in pages within Lookbook
+
+Preview embeds can be added to pages using the `embed` helper and any point in your document.
+
+An embedded component preview looks like this: 
+
+<%= embed Feedback::BlankSlateComponentPreview, :default, params: { icon: true } %>
+
+To specify which preview example to render, the helper accepts a **preview class** and a **method name** (as a symbol) as it's arguments:
+
+```erb
+&lt;%= embed Feedback::BlankSlateComponentPreview, :default %&gt;
+```
+
+**Preview params** can be supplied if required:
+
+```erb
+&lt;%= embed Feedback::BlankSlateComponentPreview, :default,
+  params: { icon: true } %&gt;
+```
+
+### Displaying inspector panels
+
+You can specify a list of panels to display in the embed, underneath the preview itself:
+
+```erb
+&lt;%= embed Feedback::BlankSlateComponentPreview, :default,
+  panels: [:source, :params] %&gt;
+```
+
+<%= embed Feedback::BlankSlateComponentPreview, :default, panels: %w[source params] %>
+
+## Embedding previews on external sites
+
+See the "[external preview embeds](<%= main_app.embeds_path %>)" page for details and examples.
+
+
+

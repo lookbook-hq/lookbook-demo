@@ -4,6 +4,12 @@
 
 ---
 
+**🚨 This is a demo to showcase new features in the _work-in-progress_ Lookbook v2.0 release 🚨**
+
+For v1 demo code see the [main branch](https://github.com/ViewComponent/lookbook-demo/tree/main).
+
+---
+
 This demo app demonstrates a basic Lookbook installation with some example components adapted from [TailwindUI](https://tailwindui.com/).
 
 **View the demo: https://lookbook-demo-app.herokuapp.com/lookbook**

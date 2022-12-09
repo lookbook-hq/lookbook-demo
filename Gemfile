@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '3.1.3'
 
 gem "actionpack"
 gem "actionview"
@@ -22,7 +22,7 @@ gem "cssbundling-rails", "~> 1.1"
 gem "phlex-rails"
 
 gem "view_component"
-gem "lookbook", git: "https://github.com/ViewComponent/lookbook.git", branch: "v2.0-wip"
+gem "lookbook", git: "https://github.com/ViewComponent/lookbook.git", branch: "v2"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

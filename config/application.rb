@@ -1,60 +1,81 @@
 require_relative "boot"
 
 require "rails"
-# Pick the frameworks you want:
-# require "active_model/railtie"
-# require "active_job/railtie"
-# require "active_record/railtie"
-# require "active_storage/engine"
 require "action_controller/railtie"
-# require "action_mailer/railtie"
-# require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
-# require "action_cable/engine"
-# require "rails/test_unit/railtie"
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module LookbookDemo
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    config.autoload_paths << "#{root}/app"
-    %w{render_template render_partial render_collection}.each do |event|
-      ActiveSupport::Notifications.unsubscribe "#{event}.action_view"
-    end
+    # ----------------------------------------------------------- #
 
-    config.public_file_server.enabled = true
+    # ViewComponent configuration
+    #
+    # Lookbook will respect any ViewComponent config options so
+    # additional preview paths etc do not need to be additionally
+    # specified in the Lookbook config.
 
+    config.view_component.preview_paths << "#{root}/app/components"
+
+    config.view_component.default_preview_layout = "preview"
+
+    config.view_component.preview_controller = "PreviewController"
+
+    config.view_component.show_previews = true
+
+    # ----------------------------------------------------------- #
+
+    # Lookbook configuration 
+    # 
+    # See https://lookbook.build/api/config for 
+    # defails of all available config options
+
+    config.lookbook.project_name = "Lookbook v2 Demo"
+
+    config.lookbook.debug_menu = true
+
+    config.lookbook.ui_theme = :rose
+  
+    # This is an simple example of creating a custom panel. 
+    # This one is an assets panel that is used to display the
+    # contents of any CSS/JS assets for a component.
+    #
+    # It assumes that asset files are named the same as the component
+    # file but with a `.css/.js` file extesions.
+    Lookbook.define_panel("assets", "lookbook/panels/assets", {
+      label: "Assets",
+      locals: lambda do |data|
+        assets = data.preview.components.flat_map do |component|
+          asset_files = Dir["#{component.file_path.to_s.chomp(".rb")}.{css,js}"]
+          asset_files.map { |path| Pathname.new path }
+        end.compact
+        { assets: assets }
+      end
+    })
+
+    # ----------------------------------------------------------- #
+
+    # Other configuration
+    #
+    # Any other non-Lookbook or ViewComponent config
+    # required to run the demo app.
+
+    # Ensure that Lookbook preview embed iframes
+    # can be embedded on other sites.
     config.action_dispatch.default_headers = {
       "X-Frame-Options" => "ALLOWALL"
     }
 
-    config.view_component.default_preview_layout = "preview"
-    config.view_component.preview_controller = "PreviewController"
-    config.view_component.show_previews = true
-
-    config.lookbook.project_name = "Lookbook v2 Demo"
-    config.lookbook.debug_menu = true
-
-    # Assets panel  -----------------
-
-    Lookbook.define_panel("assets", "lookbook/panels/assets", {
-      label: "Assets",
-      locals: lambda do |data|
-        assets = data.preview.components.map do |component|
-          # This example expects assets to have the same path as the related component `.rb`
-          # file but with a `.js` or `.css` extension
-          # `app/components/elements/button.rb` -> `app/components/elements/button.js`
-          asset_files = Dir["#{component.file_path.to_s.chomp(".rb")}.{css,js}"]
-          asset_files.map { |path| Pathname.new path }
-        end.flatten.compact
-        { assets: assets }
-      end
-    })
+    # Autoload app dir (required by Phlex)
+    config.autoload_paths << "#{root}/app"
+    
+    # Reduce action view log spam
+    %w{render_template render_partial render_collection}.each do |event|
+      ActiveSupport::Notifications.unsubscribe "#{event}.action_view"
+    end
   end
 end
