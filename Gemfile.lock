@@ -105,6 +105,7 @@ GEM
       addressable
     cssbundling-rails (1.1.1)
       railties (>= 6.0.0)
+    date (3.3.1)
     erubi (1.11.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -130,21 +131,20 @@ GEM
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.6.0)
-    net-imap (0.3.1)
+    net-imap (0.3.2)
+      date
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.0)
+    net-protocol (0.2.1)
       timeout
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.9-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.9-x86_64-linux)
+    nokogiri (1.13.10-arm64-darwin)
       racc (~> 1.4)
     pg (1.4.5)
-    phlex (1.0.0.rc2)
+    phlex (1.0.0)
       zeitwerk (~> 2.6)
     phlex-rails (0.3.2)
       phlex (>= 1.0.0.rc1, < 2)
@@ -234,9 +234,7 @@ GEM
     zeitwerk (2.6.6)
 
 PLATFORMS
-  arm64-darwin-21
   arm64-darwin-22
-  x86_64-linux
 
 DEPENDENCIES
   actioncable
@@ -266,4 +264,4 @@ RUBY VERSION
    ruby 3.1.3p185
 
 BUNDLED WITH
-   2.3.11
+   2.3.26
