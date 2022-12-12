@@ -1,11 +1,7 @@
-# Lookbook Demo App
+# Lookbook v2 Demo App
 
-[Lookbook](https://github.com/ViewComponent/lookbook) is a tool to help browse, develop, test & document [ViewComponents](https://viewcomponent.org/) in your app.
+👉 **https://v2-demo.lookbook.build**
 
----
+This is a demo app for showcasing some of the new features in the upcoming Lookbook v2.0 release.
 
-**🚨 This is a demo to showcase new features in the _work-in-progress_ Lookbook v2.0 release 🚨**
-
-For v1 demo code see the [main branch](https://github.com/ViewComponent/lookbook-demo/tree/main).
-
----
+See the [main branch](https://github.com/ViewComponent/lookbook-demo/tree/main) for the current stable (v1.x) release demo.
