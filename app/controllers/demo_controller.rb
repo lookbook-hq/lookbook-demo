@@ -1,5 +1,5 @@
 class DemoController < ApplicationController
-  helper Lookbook::ComponentsHelper
+  helper Lookbook::UiElementsHelper
 
   def index
   end

@@ -25,7 +25,7 @@ module LookbookDemo
 
     config.view_component.preview_controller = "PreviewController"
 
-    config.view_component.show_previews = true
+    # config.view_component.show_previews = true
 
     # ----------------------------------------------------------- #
 
@@ -34,11 +34,13 @@ module LookbookDemo
     # See https://lookbook.build/api/config for 
     # defails of all available config options
 
-    config.lookbook.project_name = "Lookbook v2 Demo"
+    config.lookbook.project_name = "Lookbook Demo"
 
     config.lookbook.debug_menu = true
 
-    config.lookbook.ui_theme = :rose
+    config.lookbook.preview_embeds.policy = "ALLOWALL"
+
+    # config.lookbook.ui_theme = :rose
   
     # This is an simple example of creating a custom panel. 
     # This one is an assets panel that is used to display the
@@ -46,11 +48,11 @@ module LookbookDemo
     #
     # It assumes that asset files are named the same as the component
     # file but with a `.css/.js` file extesions.
-    Lookbook.define_panel("assets", "lookbook/panels/assets", {
+    Lookbook.add_panel("assets", "lookbook/panels/assets", {
       label: "Assets",
       locals: lambda do |data|
-        assets = data.preview.components.flat_map do |component|
-          asset_files = Dir["#{component.file_path.to_s.chomp(".rb")}.{css,js}"]
+        assets = data.preview.targets.flat_map do |target|
+          asset_files = Dir["#{target.directory_path}/#{target.file_name(true)}.{css,js}"]
           asset_files.map { |path| Pathname.new path }
         end.compact
         { assets: assets }
@@ -64,11 +66,6 @@ module LookbookDemo
     # Any other non-Lookbook or ViewComponent config
     # required to run the demo app.
 
-    # Ensure that Lookbook preview embed iframes
-    # can be embedded on other sites.
-    config.action_dispatch.default_headers = {
-      "X-Frame-Options" => "ALLOWALL"
-    }
 
     # Autoload app dir (required by Phlex)
     config.autoload_paths << "#{root}/app"

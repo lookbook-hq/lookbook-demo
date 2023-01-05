@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <script src="/lookbook-assets/js/lookbook.js" defer></script>
 
   <%= render "layouts/head" %>
 </head>
@@ -12,9 +13,5 @@
   <main>
     <%= yield %>
   </main>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
-  <script src="/lookbook-assets/js/lookbook.js"></script>
-  <script>Lookbook.initEmbeds();</script>
 </body>
 </html>

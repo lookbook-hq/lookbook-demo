@@ -1,5 +1,5 @@
 # @label View template example
-# @type template
+# @target partials/_example.html.erb
 class ViewExamplePreview < Lookbook::Preview
 
   # @param emoji select { choices: [[🚀 Rocket, 🚀],[❤️ Heart, ❤️],[😱 Scream, 😱]] }

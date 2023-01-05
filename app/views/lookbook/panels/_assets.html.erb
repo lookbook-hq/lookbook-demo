@@ -47,7 +47,15 @@
   }
 </style>
 
-<div class="lookbook-panel">
+<div class="lookbook-panel"
+  @panel:show="console.log('panel show', $event.detail)"
+  @panel:hide="console.log('panel hide', $event.detail.name)"
+  @panel:resize="console.log('resize', $event.detail.width)">
+
+  <div x-data="{event: ''}" x-init="console.log('assets init')">
+    <span x-text="event"></span>
+  </div>
+
   <div class="notice">
     <p><strong>This is a custom panel!</strong>
     See the <a href="https://lookbook.build/guide/extend/panels/">documentation</a> for details on how to add custom panels to

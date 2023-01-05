@@ -1,5 +1,4 @@
-# @type phlex
-# @component Views::Phlex::Greeting
+# @target Views::Phlex::Example
 class PhlexExamplePreview < Lookbook::Preview
   
   # @param emoji select { choices: [[🚀 Rocket, 🚀],[❤️ Heart, ❤️],[😱 Scream, 😱]] }
