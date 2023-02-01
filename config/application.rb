@@ -51,7 +51,7 @@ module LookbookDemo
     Lookbook.add_panel("assets", "lookbook/panels/assets", {
       label: "Assets",
       locals: lambda do |data|
-        assets = data.preview.targets.flat_map do |target|
+        assets = data.preview.render_targets.flat_map do |target|
           asset_files = Dir["#{target.directory_path}/#{target.file_name(true)}.{css,js}"]
           asset_files.map { |path| Pathname.new path }
         end.compact
@@ -65,7 +65,6 @@ module LookbookDemo
     #
     # Any other non-Lookbook or ViewComponent config
     # required to run the demo app.
-
 
     # Autoload app dir (required by Phlex)
     config.autoload_paths << "#{root}/app"
