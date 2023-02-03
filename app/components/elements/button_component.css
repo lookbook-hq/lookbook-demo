@@ -11,4 +11,16 @@
   .button.button-secondary {
     @apply bg-gray-500 hover:bg-gray-600 focus:ring-gray-400;
   }
+
+  [data-theme="dark"] .button {
+    @apply bg-green-300 text-black;
+  }
+
+  [data-theme="dark"] .button-danger {
+    @apply bg-red-200;
+  }
+
+  [data-theme="dark"] .button-secondary {
+    @apply bg-gray-200;
+  }
 }

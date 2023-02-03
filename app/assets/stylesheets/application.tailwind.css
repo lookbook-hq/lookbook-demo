@@ -11,6 +11,14 @@
     @apply font-body text-lg;
   }
 
+  [data-theme="dark"] body {
+    @apply bg-gray-800;
+  }
+
+  [data-theme="light"] body {
+    @apply bg-white;
+  }
+
   main a {
     @apply text-indigo-700 underline decoration-dotted decoration-indigo-200 hover:decoration-indigo-500 underline-offset-4;
   }
