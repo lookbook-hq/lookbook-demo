@@ -23,7 +23,7 @@ gem "phlex-rails"
 
 gem "view_component", ">= 3.0.0.rc1"
 
-gem "lookbook", ">= 2.0.0.beta.1"
+gem "lookbook", ">= 2.0.0.beta.2"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
