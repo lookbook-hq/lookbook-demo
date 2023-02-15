@@ -13,8 +13,8 @@ class Feedback::BlankSlateComponentPreview < ViewComponent::Preview
   # @param text select :button_text_options
   def default(icon: false, content: "Nothing here yet. Just waiting for your content!", title: "This is the title", text: nil)
     render Feedback::BlankSlateComponent.new(with_icon: icon) do |slate|
-      slate.title { title } if title.present?
-      slate.action { text } if text.present?
+      slate.with_title { title } if title.present?
+      slate.with_action { text } if text.present?
       content
     end
   end
