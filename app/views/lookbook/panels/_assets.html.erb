@@ -52,7 +52,7 @@
   @panel:hide="console.log('panel hide', $event.detail.name)"
   @panel:resize="console.log('resize', $event.detail.width)">
 
-  <div x-data="{event: ''}" x-init="console.log('assets init')">
+  <div x-data="{event: ''}">
     <span x-text="event"></span>
   </div>
 
