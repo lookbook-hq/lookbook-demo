@@ -23,7 +23,11 @@ gem "phlex-rails"
 
 gem "view_component", ">= 3.0.0.rc1"
 
-gem "lookbook", ">= 2.0.0.beta.8"
+if ENV["LOOKBOOK_PATH"]
+  gem "lookbook", path: ENV["LOOKBOOK_PATH"]
+else
+  gem "lookbook", ">= 2.0.0.beta.9"
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
