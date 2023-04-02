@@ -47,18 +47,11 @@
   }
 </style>
 
-<div class="lookbook-panel"
-  @panel:show="console.log('panel show', $event.detail)"
-  @panel:hide="console.log('panel hide', $event.detail.name)"
-  @panel:resize="console.log('resize', $event.detail.width)">
-
-  <div x-data="{event: ''}">
-    <span x-text="event"></span>
-  </div>
+<div class="lookbook-panel">
 
   <div class="notice">
     <p><strong>This is a custom panel!</strong>
-    See the <a href="https://lookbook.build/guide/extend/panels/">documentation</a> for details on how to add custom panels to
+    See the <a href="https://v2.lookbook.build/extend/panels">documentation</a> for details on how to add custom panels to
     your Lookbook instance.
     </p>
   </div>
