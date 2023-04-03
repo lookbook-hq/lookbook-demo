@@ -26,7 +26,7 @@ gem "view_component", ">= 3.0.0.rc1"
 if ENV["LOOKBOOK_PATH"]
   gem "lookbook", path: ENV["LOOKBOOK_PATH"]
 else
-  gem "lookbook", ">= 2.0.0.beta.9"
+  gem "lookbook", ">= 2.0.0.rc.1"
 end
 
 group :development, :test do
