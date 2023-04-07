@@ -11,38 +11,24 @@ module LookbookDemo
   class Application < Rails::Application
     config.load_defaults 7.0
 
-    # ----------------------------------------------------------- #
-
-    # ViewComponent configuration
-    #
-    # Lookbook will respect any ViewComponent config options so
-    # additional preview paths etc do not need to be additionally
-    # specified in the Lookbook config.
-
-    config.view_component.preview_paths << "#{root}/app/components"
-
-    config.view_component.default_preview_layout = "preview"
-
-    config.view_component.preview_controller = "PreviewController"
-
-    config.view_component.show_previews = true
-
-    # ----------------------------------------------------------- #
-
     # Lookbook configuration
     #
-    # See https://lookbook.build/api/config for
+    # See https://lookbook.build/guide/config for
     # defails of all available config options
 
     config.lookbook.project_name = "Lookbook Demo"
 
-    config.lookbook.debug_menu = true
+    config.lookbook.preview_layout = "preview"
+
+    config.lookbook.preview_controller = "PreviewController"
 
     config.lookbook.preview_embeds.policy = "ALLOWALL"
 
     config.lookbook.preview_display_options = {
       theme: ["light", "dark"] # dynamic 'theme' display option
     }
+
+    config.lookbook.debug_menu = true
 
     # This is an simple example of creating a custom panel.
     # This one is an assets panel that is used to display the
