@@ -1,3 +1,20 @@
+GIT
+  remote: https://github.com/ViewComponent/lookbook.git
+  revision: a7cd4bef3e1562546bcaabab1630dc7288c71d4f
+  branch: v2-fix-missing-render-method
+  specs:
+    lookbook (2.0.0.rc.2)
+      activemodel
+      css_parser
+      htmlbeautifier (~> 1.3)
+      htmlentities (~> 4.3.4)
+      railties (>= 5.0)
+      redcarpet (~> 3.5)
+      rouge (>= 3.26, < 5.0)
+      view_component (>= 2.0)
+      yard (~> 0.9.25)
+      zeitwerk (~> 2.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -103,17 +120,6 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    lookbook (2.0.0.rc.2)
-      activemodel
-      css_parser
-      htmlbeautifier (~> 1.3)
-      htmlentities (~> 4.3.4)
-      railties (>= 5.0)
-      redcarpet (~> 3.5)
-      rouge (>= 3.26, < 5.0)
-      view_component (>= 2.0)
-      yard (~> 0.9.25)
-      zeitwerk (~> 2.5)
     mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
@@ -245,7 +251,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   cssbundling-rails (~> 1.1)
   listen (~> 3.3)
-  lookbook (>= 2.0.0.rc.2)
+  lookbook!
   pg
   phlex-rails
   puma (~> 5.0)

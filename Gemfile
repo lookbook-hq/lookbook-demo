@@ -26,7 +26,7 @@ gem "view_component", ">= 3.0.0.rc1"
 if ENV["LOOKBOOK_PATH"]
   gem "lookbook", path: ENV["LOOKBOOK_PATH"]
 else
-  gem "lookbook", ">= 2.0.0.rc.2"
+  gem "lookbook", git: "https://github.com/ViewComponent/lookbook.git", branch: "v2-fix-missing-render-method"
 end
 
 group :development, :test do
