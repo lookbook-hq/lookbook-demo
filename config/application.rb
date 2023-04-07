@@ -29,9 +29,9 @@ module LookbookDemo
 
     # ----------------------------------------------------------- #
 
-    # Lookbook configuration 
-    # 
-    # See https://lookbook.build/api/config for 
+    # Lookbook configuration
+    #
+    # See https://lookbook.build/api/config for
     # defails of all available config options
 
     config.lookbook.project_name = "Lookbook Demo"
@@ -41,12 +41,10 @@ module LookbookDemo
     config.lookbook.preview_embeds.policy = "ALLOWALL"
 
     config.lookbook.preview_display_options = {
-      theme: ["light", "dark"], # dynamic 'theme' display option
+      theme: ["light", "dark"] # dynamic 'theme' display option
     }
 
-    config.lookbook.ui_theme = :rose
-    
-    # This is an simple example of creating a custom panel. 
+    # This is an simple example of creating a custom panel.
     # This one is an assets panel that is used to display the
     # contents of any CSS/JS assets for a component.
     #
@@ -55,11 +53,12 @@ module LookbookDemo
     Lookbook.add_panel("assets", "lookbook/panels/assets", {
       label: "Assets",
       locals: lambda do |data|
+        puts "------------------- #{data.preview.render_targets.size}"
         assets = data.preview.render_targets.flat_map do |target|
           asset_files = Dir["#{target.directory_path}/#{target.file_name(true)}.{css,js}"]
           asset_files.map { |path| Pathname.new path }
         end.compact
-        { assets: assets }
+        {assets: assets}
       end
     })
 
@@ -72,9 +71,9 @@ module LookbookDemo
 
     # Autoload app dir (required by Phlex)
     config.autoload_paths << "#{root}/app"
-    
+
     # Reduce action view log spam
-    %w{render_template render_partial render_collection}.each do |event|
+    %w[render_template render_partial render_collection].each do |event|
       ActiveSupport::Notifications.unsubscribe "#{event}.action_view"
     end
   end

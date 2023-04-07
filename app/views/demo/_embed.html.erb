@@ -2,9 +2,9 @@
 props_str = props.map { |k, v| "#{k.to_s}=\"#{v}\"".html_safe }.join("\n\s\s")
 app_endpoint = "//#{request.host_with_port}/lookbook"
 %>
+<div class="border border-gray-300 rounded-lg p-2 shadow-lg bg-white">  
 <div class="block w-full p-6 bg-gray-100 rounded-md">
   <h2 class="mb-6 text-lg font-bold rounded-md inline-flex items-center space-x-2">
-    <span><%= emoji %></span>
     <span><%= name %></span>
   </h2>
 
@@ -24,4 +24,5 @@ app_endpoint = "//#{request.host_with_port}/lookbook"
 </lookbook-embed>
 <% end %>
   </details>
+</div>
 </div>

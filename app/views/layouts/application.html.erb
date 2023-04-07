@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="lookbook-logo-bg">
 <head>
   <title>Lookbook Demo App</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,9 +9,25 @@
 
   <%= render "layouts/head" %>
 </head>
-<body class="px-8 py-10 mx-auto max-w-7xl">
+<body class=" pb-20">
+  <header class=" w-full py-6 px-8 mb-4">
+    <div class="max-w-6xl flex items-center mx-auto">
+      <a href="<%= root_url %>" class="inline-flex px-2 py-2 bg-white/80">
+        <img src="<%= image_url "lookbook_logo.svg" %>" alt="Lookbook logo" class="h-5">
+      </a>
+
+      <nav class="flex items-center ml-auto text-sm space-x-2">
+        <a href="<%= lookbook_path %>" class="inline-flex px-2 py-2 bg-white/80">Lookbook</a>
+        <a href="<%= embeds_path %>" class="inline-flex px-2 py-2 bg-white/80">Preview Embeds</a>
+        <a href="https://lookbook.build/guide" class="inline-flex px-2 py-2 bg-white/80">Docs</a>
+        <a href="https://github.com/ViewComponent/lookbook" class="inline-flex px-2 py-2 bg-white/80">Github</a>
+      </nav>
+    </div>
+  </header>
   <main>
-    <%= yield %>
+    <div class="max-w-4xl mx-auto">
+      <%= yield %>
+    </div>
   </main>
 </body>
 </html>

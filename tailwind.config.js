@@ -16,6 +16,7 @@ module.exports = {
       mono: ["Source Code Pro", ...defaultTheme.fontFamily.mono],
     },
   },
+  plugins: [require("@tailwindcss/typography")],
   safelist: [
     ".theme-github-light",
     ".lookbook-panel",

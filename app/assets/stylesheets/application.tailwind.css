@@ -8,7 +8,7 @@
 
 @layer base {
   body {
-    @apply font-body text-lg;
+    @apply font-body;
   }
 
   [data-theme="dark"] body {
@@ -20,7 +20,7 @@
   }
 
   main a {
-    @apply text-indigo-700 underline decoration-dotted decoration-indigo-200 hover:decoration-indigo-500 underline-offset-4;
+    @apply text-pink-700 underline decoration-dotted decoration-pink-200 hover:decoration-pink-500 underline-offset-4;
   }
 
   main p {
@@ -31,6 +31,14 @@
   main p code {
     font-size: 0.8em;
     @apply font-mono bg-gray-100 inline-block px-1;
+  }
+
+  .lookbook-logo-bg {
+    background-image: url("/assets/lookbook_bg.svg");
+    background-size: 60px 60px;
+    background-repeat: repeat;
+    background-position: 0 20px;
+    background-attachment: fixed;
   }
 }
 

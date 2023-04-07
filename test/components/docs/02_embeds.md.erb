@@ -3,43 +3,26 @@ id: embeds
 label: Embedding Previews
 ---
 
-You can embed live preview examples into documentation pages (like this one!) as well as on pages outside of Lookbook.
+You can embed previews from your project directly into documentation pages to help create living documents that always feature the latest changes to your component previews.
 
-## Embedding previews in pages within Lookbook
-
-Preview embeds can be added to pages using the `embed` helper and any point in your document.
-
-An embedded component preview looks like this: 
+And preview embeds can also be used outside of Lookbook if you want to pull them into external docs or showcases.  
 
 <%= embed Feedback::BlankSlateComponentPreview, :default, params: { icon: true } %>
 
-To specify which preview example to render, the helper accepts a **preview class** and a **method name** (as a symbol) as it's arguments:
+Preview embeds are added to pages using the `<lookbook-embed>` element:
 
-```erb
-&lt;%= embed Feedback::BlankSlateComponentPreview, :default %&gt;
+```html
+<lookbook-embed
+  app="https://myapp.com/lookbook"
+  preview="Feedback::BlankSlateComponentPreview"
+  scenario="default"
+  panels="params,source,output">
+</lookbook-embed>
 ```
 
-**Preview params** can be supplied if required:
+Configuration options are set using attribute key/value pairs on the element.
 
-```erb
-&lt;%= embed Feedback::BlankSlateComponentPreview, :default,
-  params: { icon: true } %&gt;
-```
+### Read more:
 
-### Displaying inspector panels
-
-You can specify a list of inspector panels to display in the embed:
-
-```erb
-&lt;%= embed Feedback::BlankSlateComponentPreview, :default,
-  panels: [:source, :params] %&gt;
-```
-
-<%= embed Feedback::BlankSlateComponentPreview, :default, panels: %w[source params] %>
-
-## Embedding previews on external sites
-
-See the "[external preview embeds](<%= main_app.embeds_path %>)" page for details and examples.
-
-
-
+* [Add previews to documentation pages](https://lookbook.build/guide/pages/embedding)
+* [Embedding previews externally](https://lookbook.build/guide/sharing/embeds)

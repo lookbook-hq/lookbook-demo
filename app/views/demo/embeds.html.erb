@@ -2,7 +2,6 @@
   embeds = [
     {
       name: "Basic Embed",
-      emoji: "🎉",
       props: {
         preview: "Feedback::AlertComponentPreview",
         scenario: "success"
@@ -10,7 +9,6 @@
     },
     {
       name: "Tab drawer",
-      emoji: "🎉",
       props: {
         preview: "Feedback::BlankSlateComponentPreview",
         scenario: "default",
@@ -19,7 +17,6 @@
     },
     {
       name: "Preview scenario switcher",
-      emoji: "🎉",
       props: {
         preview: "Feedback::AlertComponentPreview",
         scenarios: "danger,success,warning",
@@ -29,51 +26,23 @@
   ]
 %>
 
-<div class="space-y-10">
-  <div class="space-y-4">
-    <header class="flex items-center mb-6">
-      <h1 class="text-3xl font-bold text-indigo-700">Lookbook Preview Embeds</h1>
-      <nav class="ml-auto text-base flex items-center space-x-4">
-        <a href="/">Overview</a>
-        <a href="<%= lookbook_path %>">Lookbook UI</a>
-      </nav>
-    </header>
+<div class="space-y-12">
 
-    <p>Preview embeds allow you to embed component previews in pages outside of the Lookbook UI, either in the parent app or on another site altogether.</p>
+  <div class="border border-gray-300 rounded-lg p-10 shadow-lg bg-white">  
+    <div class="prose prose-lg">
+      <h1 class="text-3xl font-bold text-pink-700">Preview Embeds</h1>
 
-    <p>Embed default configuration options can be customised in your app config and then overridden on a per-embed basis, if required.</p>
+      <p>Preview embeds allow you to embed component previews in pages outside of the Lookbook UI, either in the parent app or on another site altogether.</p>
 
-    <p><strong>Preview embeds are still a work-in-progress feature and have not yet been released.</strong> The following information is for illustrative purposes only.</p>
-  </div>
+      <p>See the <a href="https://lookbook.build/guide/sharing/embeds">embeds documentation</a> for usage instructions.</p>
 
-  <div class="!mt-8">
-    <h2 class="text-xl font-bold mb-4">Using embeds</h2>
-
-    <ol class="list-decimal ml-4 space-y-2 !my-6">
-      <li>Include the <a href="/lookbook-assets/js/lookbook.js"><code>lookbook.js</code></a> script (served by your app at <code>/lookbook-assets/js/lookbook.js</code>) at the bottom of your page.</li>
-      <li>Add embeds to your page using <code>&lt;lookbook-embed&gt;</code> custom elements with appropriate attribute values set (see examples below).</li>
-    </ol>
-    
-    <%= code class: "!mt-6" do %>
-    <lookbook-embed
-      app="//your-app.com/lookbook"
-      preview="Elements::ButtonComponentPreview"
-      scenario="default">
-    </lookbook-embed>
-     
-    <script src="/path/to/lookbook.js"></script>
-    <% end %>
-  </div>
-
-  <div>
-    <h2 class="text-xl font-bold mb-4">Examples</h2>
-
-    <p>Below are some examples highlighting some of the available configuration options.</p>
-
-    <div class="space-y-8 mt-8">
-      <% embeds.each do |data| %>
-        <%= render "demo/embed", **data %>
-      <% end %>
+      <p>Below are some examples highlighting some of the available configuration options.</p>
     </div>
   </div>
+  
+  <% embeds.each do |data| %>
+    <%= render "demo/embed", **data %>
+  <% end %>
+
 </div>
+
