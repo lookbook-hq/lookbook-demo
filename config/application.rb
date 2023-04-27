@@ -53,7 +53,6 @@ module LookbookDemo
     Lookbook.add_panel("assets", "lookbook/panels/assets", {
       label: "Assets",
       locals: lambda do |data|
-        puts "------------------- #{data.preview.render_targets.size}"
         assets = data.preview.render_targets.flat_map do |target|
           asset_files = Dir["#{target.directory_path}/#{target.file_name(true)}.{css,js}"]
           asset_files.map { |path| Pathname.new path }

@@ -3,7 +3,4 @@ class DemoController < ApplicationController
 
   def index
   end
-
-  def embeds
-  end
 end
