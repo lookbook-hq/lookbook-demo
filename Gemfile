@@ -21,12 +21,12 @@ gem "cssbundling-rails", "~> 1.1"
 
 gem "phlex-rails"
 
-gem "view_component", ">= 3.0.0.rc1"
+gem "view_component", "~> 3.0.0"
 
 if ENV["LOOKBOOK_PATH"]
   gem "lookbook", path: ENV["LOOKBOOK_PATH"]
 else
-  gem "lookbook", git: "https://github.com/ViewComponent/lookbook.git", branch: "v2-fix-missing-render-method"
+  gem "lookbook", ">= 2.0.0.rc.3"
 end
 
 group :development, :test do
