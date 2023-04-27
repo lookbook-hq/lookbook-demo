@@ -1,7 +1,19 @@
-# Lookbook v2 Demo App
+# Lookbook Demo App
 
-👉 **https://v2-demo.lookbook.build**
+[Lookbook](https://github.com/ViewComponent/lookbook) is a UI development environment for Ruby on Rails apps.
 
-This is a demo app for showcasing some of the new features in the upcoming Lookbook v2.0 release.
+---
 
-See the [main branch](https://github.com/ViewComponent/lookbook-demo/tree/main) for the current stable (v1.x) release demo.
+This demo app demonstrates a basic Lookbook installation with some example components adapted from [TailwindUI](https://tailwindui.com/).
+
+**View the demo: https://demo.lookbook.build**
+
+![Lookbook UI](.github/assets/lookbook_ui.png)
+
+## Running the demo app locally
+
+1. Clone or download [this repo](https://github.com/ViewComponent/lookbook-demo)
+2. Install Ruby dependencies: `bundle install`
+3. Install Node dependencies: `npm install`
+4. Start the app: `bin/run`
+5. Navigate to [http://localhost:3000/lookbook](http://localhost:3000/lookbook) to start playing with the Lookbook UI.
