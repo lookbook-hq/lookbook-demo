@@ -1,22 +1,12 @@
-<div class="mt-[10vh] mx-auto max-w-xl text-center">
-  <h1 class="text-3xl font-bold text-pink-700 mb-4">
-    <span class="bg-white/70 inline-block px-6 py-3">Lookbook Demo</span>
-  </h1>
-
-<div class="border border-gray-300 rounded-lg p-10 shadow-lg text-lg bg-white">  
-  <div class="max-w-lg mx-auto">
-    
-    <p class="text-xl leading-relaxed">
-      This is a demo app for <a href="https://lookbook.build" targe="_blank">Lookbook</a>, a UI development environment for Ruby on Rails applications.
-    </p>
-    <div class="mt-10">
-      <a href="<%= lookbook_path %>" class="inline-block py-2.5 px-5 text-base antialiased rounded-md bg-pink-700 text-white no-underline">
-        Go to the <strong>Lookbook UI</strong> &rarr;
-      </a>
-    </div>
-    <p class="text-lg mt-10 opacity-80">
-     For more info see the <a href="https://lookbook.build">Lookbook docs</a> or <a href="https://github.com/ViewComponent/lookbook">Github repo</a>.
-    </p>
+<section class="grid grid-cols-3 grid-rows-auto gap-6">
+  <div class="col-span-2">
+    <%= render "demo/intro_panel" %>
   </div>
-</div>
-</div>
+  <% (1..10).each do |i| %>
+    <%= render Blocks::RecipeCard.new(
+      title: Faker::Food.dish,
+      description: Faker::Food.description,
+      image: image_path("recipes/recipe_#{i}.jpg")
+    ) %>
+  <% end %>
+</section>

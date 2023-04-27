@@ -1,0 +1,21 @@
+<% if scenarios.many? %>
+  <%# Render a group of scenarios %>
+  <% scenarios.each do |scenario| %>
+    <div style="margin-bottom: 30px; border: 1px dashed #bbb; border-radius: 4px; position: relative; padding: 20px; ">
+      <h6 style="
+        color: #666; font-size: 11px; text-transform: uppercase;
+        letter-spacing: 0.5px; position: absolute; padding: 3px 6px;
+        background-color: #efefef; top: 0px; right: 0px; user-select: none;
+        border-top-right-radius: 4px;
+      ">
+        <%= scenario.label %>
+      </h6>
+      <div style="line-height: 1">
+        <%= scenario.output %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <%# Render a single scenario %>
+  <%= scenarios.first.output %>
+<% end %>

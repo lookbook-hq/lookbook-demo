@@ -1,0 +1,29 @@
+<div class="divide-y divide-dashed divide-lookbook-divider bg-lookbook-prose-bg h-full w-full">
+  <% if preview.notes.present? %>
+    <div class="p-4">
+      <%= lookbook_render :prose do %>
+        <%== preview.notes %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% items = scenarios.select { |scenario| scenario.notes.present? } %>
+  <% if items.many? %>
+    <% items.each do |item| %>
+      <div class="p-4 relative">
+        <h6 class="italic font-mono mb-4 opacity-40">
+          # <%= item.label %>
+        </h6>
+        <%= lookbook_render :prose, content: item.notes %>
+      </div>
+    <% end %>
+  <% else %>
+    <% unless items.none? && preview.notes.present? %>
+      <div class="p-4">
+        <%= lookbook_render :prose do %>
+          <%== items.any? ? items.first.notes : "<em class='opacity-50'>No notes provided.</em>" %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

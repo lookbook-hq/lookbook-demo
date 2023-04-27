@@ -11,12 +11,16 @@ module LookbookDemo
   class Application < Rails::Application
     config.load_defaults 7.0
 
+    Rails.autoloaders.main.collapse("app/components/*/*")
+
     # Lookbook configuration
     #
     # See https://lookbook.build/guide/config for
     # defails of all available config options
 
     config.lookbook.project_name = "Lookbook Demo"
+
+    config.lookbook.preview_paths << Rails.root.join("lookbook/previews")
 
     config.lookbook.preview_layout = "preview"
 
@@ -28,7 +32,17 @@ module LookbookDemo
       theme: ["light", "dark"] # dynamic 'theme' display option
     }
 
+    config.lookbook.page_paths << Rails.root.join("lookbook/pages")
+
     config.lookbook.debug_menu = true
+
+    Lookbook.update_panel(:notes, {
+      partial: "lookbook/panels/notes",
+      disabled: ->(data) do
+        data.preview.notes.empty? &&
+          data.scenarios.select { |e| e.notes.present? }.none?
+      end
+    })
 
     # This is an simple example of creating a custom panel.
     # This one is an assets panel that is used to display the
@@ -40,6 +54,7 @@ module LookbookDemo
       label: "Assets",
       locals: lambda do |data|
         assets = data.preview.render_targets.flat_map do |target|
+          puts "#{target.directory_path}/#{target.file_name(true)}.{css,js}"
           asset_files = Dir["#{target.directory_path}/#{target.file_name(true)}.{css,js}"]
           asset_files.map { |path| Pathname.new path }
         end.compact

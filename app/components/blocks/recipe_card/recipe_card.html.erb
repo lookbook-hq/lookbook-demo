@@ -1,0 +1,11 @@
+<%= tag.div **tag_attributes do %>
+  <div class="recipe-image">
+    <img src="<%= image %>" alt="Photo of <% title %>">
+  </div>
+  <div class="recipe-detail">
+    <h3 class="recipe-name"><%= title %></h3>
+    <div class="recipe-description">
+      <p><%= description %></p>
+    </div>
+  </div>
+<% end %>

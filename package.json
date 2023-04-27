@@ -3,16 +3,18 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "^10.4.13",
+    "boxicons": "^2.1.4",
     "postcss": "^8.4.19",
     "postcss-import": "^15.0.0",
     "tailwindcss": "^3.2.4"
   },
   "version": "1.0.1",
   "scripts": {
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
-    "watch:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --watch"
+    "build:css": "tailwindcss --postcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
+    "watch:css": "tailwindcss --postcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --watch"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9"
+    "@tailwindcss/typography": "^0.5.9",
+    "postcss-import-ext-glob": "^2.1.1"
   }
 }

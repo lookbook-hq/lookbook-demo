@@ -1,49 +1,21 @@
 @import "tailwindcss/base";
-@import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "tailwindcss/components";
 
-@import "./highlight_github.css";
-@import "../../components/elements/avatar_component";
-@import "../../components/elements/button_component";
+@import-glob "../../components/**/*.css"
 
 @layer base {
   body {
     @apply font-body;
   }
+}
 
-  [data-theme="dark"] body {
-    @apply bg-gray-800;
-  }
-
-  [data-theme="light"] body {
-    @apply bg-white;
-  }
-
-  main a {
-    @apply text-pink-700 underline decoration-dotted decoration-pink-200 hover:decoration-pink-500 underline-offset-4;
-  }
-
-  main p {
-    @apply leading-relaxed;
-  }
-
-  main li code,
-  main p code {
-    font-size: 0.8em;
-    @apply font-mono bg-gray-100 inline-block px-1;
-  }
-
+@layer utilities {
   .lookbook-logo-bg {
     background-image: url("/assets/lookbook_bg.svg");
     background-size: 60px 60px;
     background-repeat: repeat;
     background-position: 0 20px;
     background-attachment: fixed;
-  }
-}
-
-@layer components {
-  [data-component="code"] {
-    @apply bg-gray-50 border border-gray-300 rounded-md p-4 text-sm font-mono overflow-auto;
   }
 }

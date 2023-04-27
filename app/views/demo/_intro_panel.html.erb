@@ -1,0 +1,28 @@
+<%= render Elements::Panel.new(centered: false) do %>
+  <div class="space-y-8 text-xl max-w-lg">
+    <h1 class="text-3xl font-bold text-pink-700">
+      <span class="bg-white/70 inline-block">Welcome to Cookbook!</span>
+    </h1>
+
+    <%= render Elements::Prose.new(size: :lg) do %>
+      <p class="lede">
+        Cookbook isn't a real recipe website - it's really just a demo app for
+        <a href="https://lookbook.build" targe="_blank">Lookbook</a>, a UI development environment for Ruby on Rails applications.
+      </p>
+
+      <p class="">
+        The site is assembled from a number of components which can all be explored in the <a href="<%= lookbook_path %>">Lookbook UI</a>.
+      </p>
+    <% end %>
+
+    <div>
+      <%= render Elements::Button.new(
+        href: lookbook_path,
+        icon: :arrow_right_circle,
+        icon_position: :end
+      ) do %>
+        Explore the components
+      <% end %>
+    </div>
+  </div>
+<% end %>

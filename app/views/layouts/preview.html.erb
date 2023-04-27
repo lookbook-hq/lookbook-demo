@@ -7,8 +7,8 @@
   <%= render "layouts/head" %>
 </head>
 <body>
-  <div class="p-6">
-    <div class="mx-auto" style="max-width: <%= lookbook_display(:max_width, "100%") %>">
+  <div style="padding: <%= lookbook_display(:padding, "20px") %>">
+    <div class="mx-auto" style="max-width: <%= lookbook_display(:max_width, "1400px") %>">
       <%= yield %>
     </div>
   </div>
