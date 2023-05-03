@@ -7,13 +7,19 @@ You can embed previews from your project directly into documentation pages to he
 
 And preview embeds can also be used outside of Lookbook if you want to pull them into external docs or showcases.  
 
-<%= embed Feedback::BlankSlateComponentPreview, :default, params: { icon: true } %>
+<lookbook-embed
+  app="/lookbook"
+  preview="Feedback::BlankSlateComponentPreview"
+  scenario="default"
+  panels="params,source,output"
+  param-icon="true">
+</lookbook-embed>
 
 Preview embeds are added to pages using the `<lookbook-embed>` element:
 
 ```html
 <lookbook-embed
-  app="https://myapp.com/lookbook"
+  app="/lookbook"
   preview="Feedback::BlankSlateComponentPreview"
   scenario="default"
   panels="params,source,output">
