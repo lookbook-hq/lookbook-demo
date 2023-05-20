@@ -28,9 +28,9 @@ module LookbookDemo
 
     config.lookbook.preview_embeds.policy = "ALLOWALL"
 
-    config.lookbook.preview_display_options = {
-      theme: ["light", "dark"] # dynamic 'theme' display option
-    }
+    # config.lookbook.preview_display_options = {
+    #   theme: ["light", "dark"] # dynamic 'theme' display option
+    # }
 
     config.lookbook.page_paths << Rails.root.join("lookbook/pages")
 

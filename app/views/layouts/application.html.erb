@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html class="lookbook-logo-bg">
 <head>
-  <title>CookbookApp | Lookbook Demo</title>
+  <title>Lookbook Demo</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  
   <script src="/lookbook-assets/js/lookbook.js" defer></script>
 
   <%= render "layouts/head" %>
 </head>
-<body class="pb-20">
-  <%= render Blocks::Header.new do |header| %>
-    <% header.with_nav do |nav| %>
-      <% nav.with_item(href: "#") { "Recipes" } %>
-      <% nav.with_item(href: "#") { "Ingredients" } %>
-      <% nav.with_item(href: "#") { "My Account" } %>
-    <% end %>
-  <% end %>
-
-  <main class="mt-8">
-    <div class="max-w-6xl mx-auto px-6">
-      <%= yield %>
-    </div>
-  </main>
+<body>
+  <%= yield %>
 </body>
 </html>

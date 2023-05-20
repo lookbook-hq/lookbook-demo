@@ -1,9 +1,0 @@
-@layer components {
-  [data-component="panel"] {
-    @apply border border-gray-300 rounded-lg p-10 shadow bg-white;
-
-    &[data-centered] {
-      @apply text-center;
-    }
-  }
-}

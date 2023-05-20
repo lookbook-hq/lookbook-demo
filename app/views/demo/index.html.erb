@@ -1,12 +1,5 @@
-<section class="grid grid-cols-3 grid-rows-auto gap-6">
-  <div class="col-span-2">
-    <%= render "demo/intro_panel" %>
-  </div>
-  <% (1..10).each do |i| %>
-    <%= render Blocks::RecipeCard.new(
-      title: Faker::Food.dish,
-      description: Faker::Food.description,
-      image: image_path("recipes/recipe_#{i}.jpg")
-    ) %>
-  <% end %>
-</section>
+<div class="p-20">
+  <p class="text-center">
+    <a href="<%= lookbook_path %>" class="underline">Lookbook UI &rarr;</a>
+  </p>
+</div>
