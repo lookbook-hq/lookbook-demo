@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.3'
+ruby '3.2.2'
 
 gem "actionpack"
 gem "actionview"
@@ -26,7 +26,7 @@ gem "view_component", "~> 3.0.0"
 if ENV["LOOKBOOK_PATH"]
   gem "lookbook", path: ENV["LOOKBOOK_PATH"]
 else
-  gem "lookbook", "~> 2.0.0"
+  gem "lookbook", "~> 2.1.0"
 end
 
 group :development, :test do
