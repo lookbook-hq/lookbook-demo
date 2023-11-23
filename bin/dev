@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export LOOKBOOK_PATH=${1:-"../lookbook"}
+export LOOKBOOK_ENV=development
+bundle
+bin/run
