@@ -26,7 +26,7 @@ gem "view_component", "~> 3.0.0"
 if ENV["LOOKBOOK_PATH"]
   gem "lookbook", path: ENV["LOOKBOOK_PATH"]
 else
-  gem "lookbook", "~> 2.1.0"
+  gem "lookbook", "~> 2.2.0"
 end
 
 group :development, :test do
@@ -56,4 +56,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-

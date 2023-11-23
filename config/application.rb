@@ -38,6 +38,8 @@ module LookbookDemo
 
     config.lookbook.debug_menu = true
 
+    config.lookbook.page_nav_filter = true
+
     config.lookbook.preview_embeds.policy = "ALLOWALL"
 
     config.lookbook.preview_display_options = {
