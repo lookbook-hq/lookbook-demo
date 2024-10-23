@@ -46,6 +46,8 @@ module LookbookDemo
       theme: ["light", "dark"] # dynamic 'theme' display option
     }
 
+    config.lookbook.lazy_load_previews_and_pages = true
+
     # This is an simple example of creating a custom panel.
     # This one is an assets panel that is used to display the
     # contents of any CSS/JS assets for a component.

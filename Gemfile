@@ -26,7 +26,7 @@ gem "view_component", "~> 3.0.0"
 if ENV["LOOKBOOK_PATH"]
   gem "lookbook", path: ENV["LOOKBOOK_PATH"]
 else
-  gem "lookbook", "~> 2.3.1"
+  gem "lookbook", github: "lookbook-hq/lookbook", branch: "fix-preview-csrf-exception"
 end
 
 group :development, :test do
