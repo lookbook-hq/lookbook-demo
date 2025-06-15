@@ -19,13 +19,11 @@ module LookbookDemo
     # additional preview paths etc do not need to be additionally
     # specified in the Lookbook config.
 
-    config.view_component.preview_paths << "#{root}/app/components"
+    config.view_component.previews.paths << "#{root}/app/components"
 
-    config.view_component.default_preview_layout = "preview"
+    config.view_component.previews.default_layout = "preview"
 
-    config.view_component.preview_controller = "PreviewController"
-
-    config.view_component.show_previews = true
+    config.view_component.previews.controller = "PreviewController"
 
     # ----------------------------------------------------------- #
 

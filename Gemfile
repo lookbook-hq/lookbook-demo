@@ -19,14 +19,14 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "sprockets-rails"
 gem "cssbundling-rails", "~> 1.1"
 
-gem "phlex-rails"
+gem "phlex-rails", '~> 2.3.1'
 
-gem "view_component", "~> 3.0.0"
+gem "view_component", "~> 4.0.0.alpha6"
 
 if ENV["LOOKBOOK_PATH"]
   gem "lookbook", path: ENV["LOOKBOOK_PATH"]
 else
-  gem "lookbook", "~> 2.3.8"
+  gem "lookbook", "~> 2.3.10"
 end
 
 group :development, :test do
