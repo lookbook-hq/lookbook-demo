@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.2'
+ruby '3.4.5'
 
 gem "actionpack"
 gem "actionview"
@@ -19,14 +19,14 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "sprockets-rails"
 gem "cssbundling-rails", "~> 1.1"
 
-gem "phlex-rails", '~> 2.3.1'
+gem "phlex-rails", '2.0.0.rc1'
 
-gem "view_component", "~> 4.0.0.alpha6"
+gem "view_component", " 4.0.0.alpha6"
 
 if ENV["LOOKBOOK_PATH"]
   gem "lookbook", path: ENV["LOOKBOOK_PATH"]
 else
-  gem "lookbook", "~> 2.3.10"
+  gem "lookbook", "~> 2.3.12"
 end
 
 group :development, :test do

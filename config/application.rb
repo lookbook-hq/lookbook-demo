@@ -25,6 +25,8 @@ module LookbookDemo
 
     config.view_component.previews.controller = "PreviewController"
 
+    # config.view_component.show_previews = true
+
     # ----------------------------------------------------------- #
 
     # Lookbook configuration
