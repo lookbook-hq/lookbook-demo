@@ -26,7 +26,7 @@ gem "view_component", "~> 4.0"
 if ENV["LOOKBOOK_PATH"]
   gem "lookbook", path: ENV["LOOKBOOK_PATH"]
 else
-  gem "lookbook", "~> 2.3.14"
+  gem "lookbook", "~> 2.3.15"
 end
 
 group :development, :test do
